@@ -16,54 +16,54 @@
         <TextView
             android:id="@+id/nom_appli"
             android:layout_width="match_parent"
-            android:layout_height="203dp"
-            android:layout_weight="10"
+            android:layout_height="60dp"
+            android:layout_weight="1"
             android:fontFamily="@font/aclonica"
-            android:paddingLeft="90pt"
-            android:paddingTop="35pt"
-            android:paddingRight="60pt"
-            android:paddingBottom="20pt"
+            android:paddingLeft="140dp"
+            android:paddingTop="30dp"
+            android:paddingRight="100dp"
+            android:paddingBottom="30dp"
             android:text="SavWar"
             android:textSize="36sp" />
 
         <ImageView
             android:id="@+id/logo"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_weight="0.2"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.4"
             app:srcCompat="@drawable/logo_non_officiel" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="300"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
             android:orientation="vertical">
 
             <Button
                 android:id="@+id/button_savoir"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20pt"
-                android:layout_marginTop="50pt"
-                android:layout_marginRight="20pt"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginRight="30dp"
                 android:text="Savoir du jour " />
 
             <Button
                 android:id="@+id/button_theme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20pt"
-                android:layout_marginTop="50pt"
-                android:layout_marginRight="20pt"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="30dp"
                 android:text="Thèmes de savoir" />
 
             <Button
                 android:id="@+id/button_favoris"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20pt"
-                android:layout_marginTop="50pt"
-                android:layout_marginRight="20pt"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="30dp"
                 android:text="Favoris " />
 
         </LinearLayout>

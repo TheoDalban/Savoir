@@ -7,16 +7,56 @@ import android.graphics.Bitmap;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
     private static int REQUEST_IMAGE_CAPTURE = 1;
 
+    private Button savoir;
+
+    private Button theme;
+
+    private Button favoris;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        this.savoir = (Button) findViewById(R.id.button_savoir);
+
+        savoir.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent autreActivity = new Intent(getApplicationContext(), savoir_du_jour_activity.class);
+                startActivity(autreActivity);
+                finish();
+            }
+        });
+        this.theme = (Button) findViewById(R.id.button_theme);
+
+        theme.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent autreActivity = new Intent(getApplicationContext(), savoir_du_jour_activity.class);
+                startActivity(autreActivity);
+                finish();
+            }
+        });
+        this.favoris = (Button) findViewById(R.id.button_favoris);
+
+        favoris.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent autreActivity = new Intent(getApplicationContext(), savoir_du_jour_activity.class);
+                startActivity(autreActivity);
+                finish();
+            }
+        });
     }
     @SuppressLint("NewApi")
     @Override

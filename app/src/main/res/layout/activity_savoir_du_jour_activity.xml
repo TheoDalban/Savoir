@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".savoir_du_jour_activity">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    tools:context=".savoir_du_jour_activity"
         android:orientation="vertical">
 
         <ImageView
             android:id="@+id/image_savoir"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="0.05"
             android:paddingTop="40dp"
             android:paddingBottom="40dp"
             app:srcCompat="@drawable/savoir_du_jour_image" />
@@ -22,7 +19,8 @@
         <TextView
             android:id="@+id/info_savoir"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4"
             android:fontFamily="@font/aclonica"
             android:paddingLeft="60dp"
             android:paddingTop="20dp"
@@ -34,7 +32,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="0.8"
             android:orientation="horizontal"
             android:paddingLeft="20dp"
             android:paddingRight="20dp">
@@ -60,4 +58,3 @@
         </LinearLayout>
 
     </LinearLayout>
-</android.support.constraint.ConstraintLayout>

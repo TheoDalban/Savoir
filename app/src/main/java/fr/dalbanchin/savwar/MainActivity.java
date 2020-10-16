@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent autreActivity = new Intent(getApplicationContext(), savoir_du_jour_activity.class);
                 startActivity(autreActivity);
-                finish();
             }
         });
         this.theme = (Button) findViewById(R.id.button_theme);
@@ -42,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         theme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent autreActivity = new Intent(getApplicationContext(), savoir_du_jour_activity.class);
+                Intent autreActivity = new Intent(getApplicationContext(), ThemeActivity.class);
                 startActivity(autreActivity);
                 finish();
             }

@@ -20,18 +20,18 @@
 
             <ImageView
                 android:id="@+id/home"
-                android:layout_width="match_parent"
+                android:layout_width="15dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.8"
+                android:layout_weight="1"
                 app:srcCompat="@drawable/home" />
 
             <TextView
-                android:id="@+id/titre_theme"
-                android:layout_width="match_parent"
+                android:id="@+id/titre_favoris"
+                android:layout_width="295dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:layout_weight="0.2"
+                android:layout_weight="1"
                 android:text="TextView" />
 
         </LinearLayout>
@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingTop="5dp"
-            android:id="@+id/RView"
+            android:id="@+id/RViewFav"
             android:layout_weight="1"/>
 
     </LinearLayout>

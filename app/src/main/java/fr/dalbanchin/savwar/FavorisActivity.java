@@ -5,18 +5,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import fr.dalbanchin.savwar.adapter.RAdapterTheme;
+import fr.dalbanchin.savwar.adapter.RAdapterFavoris;
 
-public class ThemeActivity extends AppCompatActivity {
+public class FavorisActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_theme);
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.RView);
-        RAdapterTheme radapter = new RAdapterTheme(this);
-        recyclerView.setAdapter(radapter);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.RViewFav);
+        //RAdapterFavoris radapter = new RAdapterFavoris(this);
+        //recyclerView.setAdapter(radapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 }

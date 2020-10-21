@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/a_row_fav"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    android:layout_weight="1"
+    android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/image_savoir"
+            android:layout_width="118dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.45"
+            app:srcCompat="@drawable/savoir_du_jour_image" />
+
+        <TextView
+            android:id="@+id/text_row_fav"
+            android:layout_width="232dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="0.1"
+            android:gravity="center"
+            android:text="Nom de l info"
+            android:textSize="20sp"
+            tools:ignore="MissingConstraints" />
+
+        <ImageView
+            android:id="@+id/plusicon"
+            android:layout_width="81dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="0.45"
+            app:srcCompat="@drawable/plus_icon" />
+
+    </LinearLayout>
+

@@ -9,24 +9,30 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 
-public class RAdapter extends RecyclerView.Adapter<RAdapter.ViewHolder> {
-
-    ArrayList<String> msgList;
+public class RAdapterFavoris extends RecyclerView.Adapter<RAdapterFavoris.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        public ConstraintLayout row;
+        public LinearLayout row;
+
+        public ImageView imageSavoir;
         public TextView textView;
+        public ImageView iconPlus;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            row = (ConstraintLayout) itemView.findViewById(R.id.a_row);
+
+            row = (LinearLayout) itemView.findViewById(R.id.a_row_fav);
+            imageSavoir = (ImageView) itemView.findViewById(R.id.image_savoir);
             textView = (TextView) itemView.findViewById(R.id.text_row);
+            iconPlus = (ImageView) itemView.findViewById(R.id.plusicon);
         }
         @Override
         public void onClick (View v) {
@@ -34,18 +40,19 @@ public class RAdapter extends RecyclerView.Adapter<RAdapter.ViewHolder> {
             Toast.makeText(v.getContext(), msgList.get(pos), Toast.LENGTH_LONG).show();
         }
     }
-    public RAdapter(Context c) {
+
+    ArrayList<String> msgList;
+
+
+    public RAdapterFavoris(Context c) {
         msgList = new ArrayList<String>();
-        msgList.add("Hello");
-        msgList.add("How are you");
-        msgList.add("Gooood!");
+        msgList.add("favoririhana");
     }
 
     @Override
-    public void onBindViewHolder(RAdapter.ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(RAdapterFavoris.ViewHolder viewHolder, int i) {
         TextView textView = viewHolder.textView;
         textView.setText(msgList.get(i));
-
     }
 
     @Override
@@ -55,14 +62,13 @@ public class RAdapter extends RecyclerView.Adapter<RAdapter.ViewHolder> {
 
 
     @Override
-    public RAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RAdapterFavoris.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
 
-        View view = inflater.inflate(R.layout.row, parent, false);
+        View view = inflater.inflate(R.layout.row_favoris, parent, false);
 
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }
 }
-
 

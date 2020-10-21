@@ -10,6 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".savoir_du_jour_activity"></activity>
+        <activity android:name=".ThemeActivity"></activity>
+        <activity android:name=".FavorisActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
         savoir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent autreActivity = new Intent(getApplicationContext(), savoir_du_jour_activity.class);
-                startActivity(autreActivity);
+                Intent savoirIntent = new Intent(getApplicationContext(), savoir_du_jour_activity.class);
+                startActivity(savoirIntent);
             }
         });
         this.theme = (Button) findViewById(R.id.button_theme);
@@ -41,9 +41,8 @@ public class MainActivity extends AppCompatActivity {
         theme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent autreActivity = new Intent(getApplicationContext(), ThemeActivity.class);
-                startActivity(autreActivity);
-                finish();
+                Intent themeIntent = new Intent(getApplicationContext(), ThemeActivity.class);
+                startActivity(themeIntent);
             }
         });
         this.favoris = (Button) findViewById(R.id.button_favoris);
@@ -51,9 +50,8 @@ public class MainActivity extends AppCompatActivity {
         favoris.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent autreActivity = new Intent(getApplicationContext(), savoir_du_jour_activity.class);
-                startActivity(autreActivity);
-                finish();
+                Intent favorisIntent = new Intent(getApplicationContext(), FavorisActivity.class);
+                startActivity(favorisIntent);
             }
         });
     }

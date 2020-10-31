@@ -47,6 +47,7 @@ public class RAdapterFavoris extends RecyclerView.Adapter<RAdapterFavoris.ViewHo
     public RAdapterFavoris(Context c) {
         msgList = new ArrayList<String>();
         msgList.add("ça fonctionne bg");
+        msgList.add("Il faut changer l'image.");
     }
 
     @Override

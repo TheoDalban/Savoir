@@ -31,7 +31,7 @@ public class RAdapterFavoris extends RecyclerView.Adapter<RAdapterFavoris.ViewHo
 
             row = (LinearLayout) itemView.findViewById(R.id.a_row_fav);
             imageSavoir = (ImageView) itemView.findViewById(R.id.image_savoir);
-            textView = (TextView) itemView.findViewById(R.id.text_row);
+            textView = (TextView) itemView.findViewById(R.id.text_row_fav);
             iconPlus = (ImageView) itemView.findViewById(R.id.plusicon);
         }
         @Override
@@ -46,7 +46,7 @@ public class RAdapterFavoris extends RecyclerView.Adapter<RAdapterFavoris.ViewHo
 
     public RAdapterFavoris(Context c) {
         msgList = new ArrayList<String>();
-        msgList.add("favoririhana");
+        msgList.add("ça fonctionne bg");
     }
 
     @Override

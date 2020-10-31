@@ -12,11 +12,11 @@ public class FavorisActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_theme);
+        setContentView(R.layout.activity_favoris);
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.RViewFav);
-        //RAdapterFavoris radapter = new RAdapterFavoris(this);
-        //recyclerView.setAdapter(radapter);
+        RAdapterFavoris radapter = new RAdapterFavoris(this);
+        recyclerView.setAdapter(radapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
 }

@@ -40,7 +40,8 @@ public class RAdapterTheme extends RecyclerView.Adapter<RAdapterTheme.ViewHolder
 
     public RAdapterTheme(Context c) {
         msgList = new ArrayList<String>();
-        msgList.add("DHAHDJA");
+        msgList.add("1er thème");
+        msgList.add("omarmelade a match le movid19 dans une regex");
     }
 
     @Override

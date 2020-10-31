@@ -30,18 +30,18 @@
                 android:layout_width="295dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:gravity="center"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:gravity="center"
+                android:text="Thèmes" />
 
         </LinearLayout>
 
         <android.support.v7.widget.RecyclerView
+            android:id="@+id/RViewFav"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingTop="5dp"
-            android:id="@+id/RViewFav"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:paddingTop="5dp" />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

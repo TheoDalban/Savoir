@@ -32,7 +32,8 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Thèmes" />
+                android:text="Favoris"
+                android:textSize="24sp" />
 
         </LinearLayout>
 

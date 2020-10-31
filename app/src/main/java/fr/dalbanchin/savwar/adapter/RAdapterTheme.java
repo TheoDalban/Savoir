@@ -4,7 +4,6 @@ package fr.dalbanchin.savwar.adapter;
 import fr.dalbanchin.savwar.R;
 
 import android.content.Context;
-import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;

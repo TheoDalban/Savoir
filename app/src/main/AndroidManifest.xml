@@ -6,7 +6,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/iconsavwar"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/iconsavwar_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".savoir_du_jour_activity"></activity>

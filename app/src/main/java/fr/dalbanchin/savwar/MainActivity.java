@@ -3,6 +3,7 @@ package fr.dalbanchin.savwar;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,9 +23,15 @@ public class MainActivity extends AppCompatActivity {
 
     private Button favoris;
 
+    // TODO IMPLEMENTER LA BASE DE DONNES
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        // On créée la bdd
+        BaseDeDonnee bdd;
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 

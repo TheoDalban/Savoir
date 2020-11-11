@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#3c3c3c">
+    android:background="@color/backgroundColor">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -20,7 +20,7 @@
             android:gravity="center"
             android:text="Ajouter un savoir"
             android:textSize="30sp"
-            android:textColor="#FFF"/>
+            android:textColor="@color/textColor"/>
 
     </RelativeLayout>
 
@@ -39,7 +39,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
-            android:hint="Thème"/>
+            android:hint="Thème"
+            android:textColorHint="@color/textColor"
+            android:theme="@style/EditTextTheme"/>
 
 
         <EditText
@@ -48,7 +50,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:inputType="text"
-            android:hint="Lien"/>
+            android:hint="Lien"
+            android:textColorHint="@color/textColor"
+            android:theme="@style/EditTextTheme"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -57,7 +61,7 @@
             android:layout_marginTop="60dp"
             android:text="Information complète"
             android:textSize="20sp"
-            android:textColor="#FFF"/>
+            android:textColor="@color/textColor"/>
 
         <EditText
             android:id="@+id/info"
@@ -65,7 +69,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:inputType="textLongMessage"
-            android:hint="info"/>
+            android:hint="info"
+            android:textColorHint="@color/textColor"
+            android:theme="@style/EditTextTheme"/>
+
 
         <Button
             android:id="@+id/btnAjouter"
@@ -73,8 +80,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Ajouter"
-            android:textColor="#FFF"
-            android:background="#7A506D"
+            android:background="@drawable/button_background"
             android:onClick="ajouter"/>
 
     </LinearLayout>

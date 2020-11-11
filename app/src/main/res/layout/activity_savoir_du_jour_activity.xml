@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".activities.SavoirDuJour"
     android:orientation="vertical"
-    android:background="#3c3c3c">
+    android:background="@color/backgroundColor">
 
     <ImageView
         android:id="@+id/image_savoir"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#3c3c3c">
+    android:background="@color/backgroundColor">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -20,7 +20,7 @@
             android:gravity="center"
             android:text="CONNEXION"
             android:textSize="30sp"
-            android:textColor="#FFF"/>
+            android:textColor="@color/textColor"/>
 
     </RelativeLayout>
 
@@ -36,15 +36,19 @@
             android:id="@+id/username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Identifiant"
             android:inputType="textEmailAddress"
-            android:hint="Identifiant"/>
+            android:textColorHint="@color/textColor"
+            android:theme="@style/EditTextTheme" />
 
         <EditText
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:hint="Mot de passe"/>
+            android:hint="Mot de passe"
+            android:textColorHint="@color/textColor"
+            android:theme="@style/EditTextTheme"/>
 
         <Button
             android:id="@+id/btn"
@@ -52,8 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Login"
-            android:textColor="#FFF"
-            android:background="#7A506D"
+            android:background="@drawable/button_background"
             android:onClick="login"/>
 
     </LinearLayout>

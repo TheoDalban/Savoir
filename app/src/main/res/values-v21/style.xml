@@ -14,6 +14,9 @@
         <item name="colorPrimaryDark">@android:color/transparent</item>
     </style>
 
+    <style name="EditTextTheme">
+        <item name="colorControlNormal">#979DAC</item>
+    </style>
 
 
 

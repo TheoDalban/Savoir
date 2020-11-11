@@ -12,22 +12,23 @@
         android:orientation="vertical"
         tools:layout_editor_absoluteX="218dp"
         tools:layout_editor_absoluteY="59dp"
-        android:background="#3c3c3c">
+        android:background="@color/backgroundColor">
+
         <TextView
             android:id="@+id/nom_appli"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="13dp"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:fontFamily="@font/aclonica"
+            android:gravity="center"
             android:text="SavWar"
-            android:textSize="36sp"
-            android:layout_gravity="center"
-            android:gravity="center"/>
+            android:textSize="36sp" />
 
         <ImageView
             android:id="@+id/logo"
             android:layout_width="match_parent"
-            android:layout_height="152dp"
+            android:layout_height="150dp"
             android:layout_weight="0.4"
             app:srcCompat="@drawable/logofixe2" />
 
@@ -42,8 +43,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="70dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginRight="30dp"
+                android:background="@drawable/button_background"
                 android:text="Savoir du jour " />
 
             <Button
@@ -53,6 +55,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="30dp"
+                android:background="@drawable/button_background"
                 android:text="Thèmes de savoir" />
 
             <Button
@@ -62,16 +65,17 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="30dp"
+                android:background="@drawable/button_background"
                 android:text="Favoris " />
 
             <Button
                 android:id="@+id/button_ajouter"
-                android:layout_width="88dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_width="101dp"
+                android:layout_height="65dp"
+                android:layout_marginLeft="228dp"
+                android:layout_marginTop="35dp"
                 android:layout_marginRight="30dp"
-                android:background="#7A506D"
+                android:background="@drawable/button_background"
                 android:text="Ajouter un savoir" />
 
         </LinearLayout>

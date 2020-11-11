@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:id="@+id/a_row"
     android:orientation="horizontal"
-    android:background="#3c3c3c">
+    android:background="@color/backgroundColor">
 
     <TextView
         android:id="@+id/text_row"

@@ -11,8 +11,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="218dp"
-        tools:layout_editor_absoluteY="59dp">
-
+        tools:layout_editor_absoluteY="59dp"
+        android:background="#3c3c3c">
         <TextView
             android:id="@+id/nom_appli"
             android:layout_width="match_parent"
@@ -63,6 +63,16 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="30dp"
                 android:text="Favoris " />
+
+            <Button
+                android:id="@+id/button_ajouter"
+                android:layout_width="88dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="30dp"
+                android:background="#7A506D"
+                android:text="Ajouter un savoir" />
 
         </LinearLayout>
     </LinearLayout>

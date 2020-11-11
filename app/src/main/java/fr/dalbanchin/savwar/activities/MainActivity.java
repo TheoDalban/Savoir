@@ -24,6 +24,7 @@ import fr.dalbanchin.savwar.storage.SavoirDatabaseStorage;
 import fr.dalbanchin.savwar.storage.utility.BaseDeDonnee;
 
 
+
 public class MainActivity extends AppCompatActivity {
 
     private static int REQUEST_IMAGE_CAPTURE = 1;
@@ -33,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     private Button theme;
 
     private Button favoris;
+
+    private Button ajouter;
 
     SavoirDatabaseStorage marvin;
 
@@ -79,6 +82,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent favorisIntent = new Intent(getApplicationContext(), FavorisActivity.class);
                 startActivity(favorisIntent);
+            }
+        });
+        this.ajouter = (Button) findViewById(R.id.button_ajouter);
+
+        ajouter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent loginIntent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(loginIntent);
             }
         });
     }

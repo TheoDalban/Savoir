@@ -5,16 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.SavoirDuJour"
-        android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#3c3c3c">
 
-        <ImageView
-            android:id="@+id/image_savoir"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.05"
-            android:paddingTop="40dp"
-            android:paddingBottom="40dp"
-            app:srcCompat="@drawable/savoir_du_jour_image" />
+    <ImageView
+        android:id="@+id/image_savoir"
+        android:layout_width="match_parent"
+        android:layout_height="316dp"
+        android:layout_weight="0.05"
+        android:paddingTop="40dp"
+        android:paddingBottom="40dp"
+        app:srcCompat="@drawable/logofixe2" />
 
         <TextView
             android:id="@+id/info_savoir"

@@ -15,6 +15,7 @@
         <activity android:name=".activities.FavorisActivity"></activity>
         <activity android:name=".activities.AjouterActivity"></activity>
         <activity android:name=".activities.LoginActivity"></activity>
+
         <activity
             android:name=".activities.SplashActivity" android:theme="@style/SplashTheme">
 

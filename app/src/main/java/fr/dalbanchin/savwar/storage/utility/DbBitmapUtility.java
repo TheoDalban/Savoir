@@ -1,16 +1,17 @@
-package fr.dalbanchin.savwar;
+package fr.dalbanchin.savwar.storage.utility;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
 import java.io.ByteArrayOutputStream;
 
+
 public class DbBitmapUtility {
 
     // convert from bitmap to byte array
     public static byte[] getBytes(Bitmap bitmap) {
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG, 0, stream); // C'etait "CompressFormat.PNG" et pas "Bitmap.CompressFormat.PNG" si ya un bug
+        bitmap.compress(Bitmap.CompressFormat.PNG, 0, stream); 
         return stream.toByteArray();
     }
 

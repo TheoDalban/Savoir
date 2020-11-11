@@ -1,9 +1,11 @@
-package fr.dalbanchin.savwar;
+package fr.dalbanchin.savwar.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+
+import fr.dalbanchin.savwar.activities.MainActivity;
 
 
 public class SplashActivity extends AppCompatActivity {

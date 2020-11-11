@@ -1,4 +1,4 @@
-package fr.dalbanchin.savwar;
+package fr.dalbanchin.savwar.activities;
 
 import android.app.Application;
 import android.os.SystemClock;

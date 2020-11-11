@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".savoir_du_jour_activity"
+    tools:context=".activities.SavoirDuJour"
         android:orientation="vertical">
 
         <ImageView

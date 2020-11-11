@@ -24,7 +24,6 @@ public class Savoir {
     }
 
     public Savoir(String info, String image_data, String theme, String lien, String favoring, String date) {
-
         this(ID++, info, image_data, theme, lien, favoring, date);
     }
 

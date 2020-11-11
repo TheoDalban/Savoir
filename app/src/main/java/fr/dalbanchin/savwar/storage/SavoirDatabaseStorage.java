@@ -15,7 +15,7 @@ public class SavoirDatabaseStorage extends BaseDeDonnee<Savoir> {
     private static final int NUM_ID = 0;
     private static final String KEY_INFORMATION = "information";
     private static final int NUM_INFORMATION = 1;
-    private static final String KEY_IMAGE = "image";
+    private static final String KEY_IMAGE = "image_data";
     private static final int NUM_IMAGE = 2;
     private static final String KEY_THEME  = "theme";
     private static final int NUM_THEME = 3;
@@ -63,14 +63,14 @@ public class SavoirDatabaseStorage extends BaseDeDonnee<Savoir> {
     }
 
     @Override
-    protected ContentValues objectToContentValues(int id, Savoir object) {
+    protected ContentValues objectToContentValues(int id, Savoir savwar) {
         ContentValues values = new ContentValues();
-        values.put(KEY_INFORMATION, object.getInfo());
-        values.put(KEY_IMAGE, object.getImage_data());
-        values.put(KEY_THEME , object.getTheme());
-        values.put(KEY_LIEN, object.getLien());
-        values.put(KEY_FAVORING, object.getFavoring());
-        values.put(KEY_DATE, object.getDate());
+        values.put(KEY_INFORMATION, savwar.getInfo());
+        values.put(KEY_IMAGE, savwar.getImage_data());
+        values.put(KEY_THEME , savwar.getTheme());
+        values.put(KEY_LIEN, savwar.getLien());
+        values.put(KEY_FAVORING, savwar.getFavoring());
+        values.put(KEY_DATE, savwar.getDate());
         return null;
     }
 

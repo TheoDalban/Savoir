@@ -1,4 +1,4 @@
-package fr.dalbanchin.savwar;
+package fr.dalbanchin.savwar.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import fr.dalbanchin.savwar.R;
 import fr.dalbanchin.savwar.storage.utility.BaseDeDonnee;
 
 
@@ -24,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
 
     private Button favoris;
 
-    // TODO IMPLEMENTER LA BASE DE DONNES
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         savoir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent savoirIntent = new Intent(getApplicationContext(), savoir_du_jour_activity.class);
+                Intent savoirIntent = new Intent(getApplicationContext(), SavoirDuJour.class);
                 startActivity(savoirIntent);
             }
         });

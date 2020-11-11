@@ -9,12 +9,12 @@
         android:roundIcon="@mipmap/iconsavwar_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:name=".MyApp">
-        <activity android:name=".savoir_du_jour_activity"></activity>
-        <activity android:name=".ThemeActivity"></activity>
-        <activity android:name=".FavorisActivity"></activity>
+        android:name=".activities.MyApp">
+        <activity android:name=".activities.SavoirDuJour"></activity>
+        <activity android:name=".activities.ThemeActivity"></activity>
+        <activity android:name=".activities.FavorisActivity"></activity>
         <activity
-            android:name=".SplashActivity" android:theme="@style/SplashTheme">
+            android:name=".activities.SplashActivity" android:theme="@style/SplashTheme">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".activities.MainActivity" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

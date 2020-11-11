@@ -15,16 +15,14 @@ public class SavoirDatabaseStorage extends BaseDeDonnee<Savoir> {
     private static final int NUM_ID = 0;
     private static final String KEY_INFORMATION = "information";
     private static final int NUM_INFORMATION = 1;
-    private static final String KEY_IMAGE = "image_data";
-    private static final int NUM_IMAGE = 2;
     private static final String KEY_THEME  = "theme";
-    private static final int NUM_THEME = 3;
+    private static final int NUM_THEME = 2;
     private static final String KEY_LIEN = "lien";
-    private static final int NUM_LIEN = 4;
+    private static final int NUM_LIEN = 3;
     private static final String KEY_FAVORING = "favoring"; // Boolean
-    private static final int NUM_FAVORING = 5;
+    private static final int NUM_FAVORING = 4;
     private static final String KEY_DATE = "date";
-    private static final int NUM_DATE = 6;
+    private static final int NUM_DATE = 5;
 
     private static SavoirDatabaseStorage STORAGE;
 
@@ -41,8 +39,8 @@ public class SavoirDatabaseStorage extends BaseDeDonnee<Savoir> {
 
         private static final String SQL_CREATE_SAVOIR_ENTRIES = "CREATE TABLE " + TABLE_NAME + " ("
                 + BaseColumns._ID + " INTEGER PRIMARY KEY,"
-                + KEY_INFORMATION + " TEXT," + KEY_IMAGE + " BLOB," + KEY_THEME  + " TEXT,"
-                + KEY_LIEN + " TEXT," + KEY_FAVORING + " BOOLEAN," + KEY_DATE + " TEXT)";
+                + KEY_INFORMATION + " TEXT," + KEY_THEME  + " TEXT,"
+                + KEY_LIEN + " TEXT," + KEY_FAVORING + " INTEGER," + KEY_DATE + " TEXT)";
 
         public DatabaseHelper(Context context) {
             super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -66,22 +64,20 @@ public class SavoirDatabaseStorage extends BaseDeDonnee<Savoir> {
     protected ContentValues objectToContentValues(int id, Savoir savwar) {
         ContentValues values = new ContentValues();
         values.put(KEY_INFORMATION, savwar.getInfo());
-        values.put(KEY_IMAGE, savwar.getImage_data());
         values.put(KEY_THEME , savwar.getTheme());
         values.put(KEY_LIEN, savwar.getLien());
         values.put(KEY_FAVORING, savwar.getFavoring());
         values.put(KEY_DATE, savwar.getDate());
-        return null;
+        return values;
     }
 
     @Override
     protected Savoir cursorToObject(Cursor cursor) {
         return new Savoir(cursor.getInt(NUM_ID),
                 cursor.getString(NUM_INFORMATION),
-                cursor.getString(NUM_IMAGE),
                 cursor.getString(NUM_THEME),
                 cursor.getString(NUM_LIEN),
-                cursor.getString(NUM_FAVORING),
+                cursor.getInt(NUM_FAVORING),
                 cursor.getString(NUM_DATE));
     }
 }

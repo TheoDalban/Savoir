@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 
+import java.net.IDN;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +27,7 @@ abstract public class BaseDeDonnee<T> implements Storage<T>{
 
     @Override
     public void insert(T object) {
-        helper.getWritableDatabase().insert(table, null, objectToContentValues(-1, object));
+        helper.getWritableDatabase().insert(table, null, objectToContentValues(-1,object));
     }
 
     @Override

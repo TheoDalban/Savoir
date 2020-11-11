@@ -1,30 +1,26 @@
 package fr.dalbanchin.savwar.model;
 
-import fr.dalbanchin.savwar.storage.utility.DbBitmapUtility;
-
 public class Savoir {
     private static int ID = 1;
 
-    private int id;
-    private String info;
-    private String image_data;
-    private String theme;
-    private String lien;
-    private String favoring;
-    private String date;
+    private final int id;
+    private final String info;
+    private final String theme;
+    private final String lien;
+    private final int favoring;
+    private final String date;
 
-    public Savoir(int id, String info, String image_data, String theme, String lien, String favoring, String date) {
+    public Savoir(int id, String info, String theme, String lien, int favoring, String date) {
         this.id = id;
         this.info = info;
-        this.image_data = image_data;
         this.theme = theme;
         this.lien = lien;
         this.favoring = favoring;
         this.date = date;
     }
 
-    public Savoir(String info, String image_data, String theme, String lien, String favoring, String date) {
-        this(ID++, info, image_data, theme, lien, favoring, date);
+    public Savoir(String info, String theme, String lien, int favoring, String date) {
+        this(ID++, info, theme, lien, favoring, date);
     }
 
 
@@ -34,10 +30,6 @@ public class Savoir {
 
     public String getInfo() {
         return info;
-    }
-
-    public String getImage_data() {
-        return image_data;
     }
 
     // Il n'existe pas de theme enum en sql lite pq pas créer des constantes de thèmes dans ce fichier ?
@@ -51,11 +43,23 @@ public class Savoir {
         return lien;
     }
 
-    public String getFavoring() {
+    public int getFavoring() {
         return favoring;
     }
 
     public String getDate() {
         return date;
+    }
+
+    @Override
+    public String toString() {
+        return "Savoir{" +
+                "id=" + id +
+                ", info='" + info + '\'' +
+                ", theme='" + theme + '\'' +
+                ", lien='" + lien + '\'' +
+                ", favoring=" + favoring +
+                ", date='" + date + '\'' +
+                '}';
     }
 }

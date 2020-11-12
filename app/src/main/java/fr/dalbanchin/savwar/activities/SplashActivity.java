@@ -25,8 +25,8 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         logo=(ImageView)findViewById(R.id.logo);
-        mySong = MediaPlayer.create(this, R.raw.splash);
-        mySong.setVolume(0.1f,0.1f);
+        mySong = MediaPlayer.create(this, R.raw.arom);
+        mySong.setVolume(0.2f,0.2f);
 
         mySong.start();
         new Handler().postDelayed(new Runnable() {

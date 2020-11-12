@@ -3,9 +3,9 @@
 
     <item android:drawable="@color/backgroundColor" />
     <item
-        android:width="250dp"
-        android:height="250dp"
-        android:drawable="@drawable/logofixe2"
+        android:width="300dp"
+        android:height="300dp"
+        android:drawable="@drawable/logoblack"
         android:gravity="center"
         />
 </layer-list>

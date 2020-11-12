@@ -1,14 +1,21 @@
 package fr.dalbanchin.savwar.activities;
 
 import android.annotation.SuppressLint;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -38,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
     private Button ajouter;
 
     SavoirDatabaseStorage marvin;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -91,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent loginIntent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(loginIntent);
+
             }
         });
     }

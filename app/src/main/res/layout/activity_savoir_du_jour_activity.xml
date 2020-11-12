@@ -11,11 +11,11 @@
     <ImageView
         android:id="@+id/image_savoir"
         android:layout_width="match_parent"
-        android:layout_height="316dp"
+        android:layout_height="258dp"
         android:layout_weight="0.05"
         android:paddingTop="40dp"
         android:paddingBottom="40dp"
-        app:srcCompat="@drawable/logofixe2" />
+        app:srcCompat="@drawable/logoblack" />
 
         <TextView
             android:id="@+id/info_savoir"
@@ -28,6 +28,7 @@
             android:paddingRight="60dp"
             android:paddingBottom="20dp"
             android:text="INFORMATIONS DU SAVOIR"
+            android:textColor="@color/textColor"
             android:textSize="18sp" />
 
         <LinearLayout
@@ -43,10 +44,12 @@
                 android:layout_width="234dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.8"
+                android:layout_marginBottom="20dp"
                 android:fontFamily="sans-serif"
                 android:layout_gravity="center"
                 android:gravity="center_vertical"
                 android:text="En savoir plus"
+                android:textColor="@color/textColor"
                 android:textSize="18sp" />
 
             <ImageView
@@ -55,6 +58,7 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_weight="0.2"
+                android:layout_marginBottom="20dp"
                 app:srcCompat="@drawable/icone_favoris" />
         </LinearLayout>
 

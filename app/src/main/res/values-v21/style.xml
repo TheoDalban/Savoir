@@ -15,7 +15,7 @@
     </style>
 
     <style name="EditTextTheme">
-        <item name="colorControlNormal">#979DAC</item>
+        <item name="colorControlNormal">@color/textColor</item>
     </style>
 
 

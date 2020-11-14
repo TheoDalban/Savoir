@@ -19,16 +19,19 @@ public class SplashActivity extends AppCompatActivity {
 
     private ImageView logo;
     private static int splashTimeOut=3500;
-    MediaPlayer mySong;
+    MediaPlayer splashSong;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         logo=(ImageView)findViewById(R.id.logo);
-        mySong = MediaPlayer.create(this, R.raw.arom);
-        mySong.setVolume(0.2f,0.2f);
 
-        mySong.start();
+        splashSong = MediaPlayer.create(this, R.raw.goutte);
+
+        splashSong.setVolume(0.4f,0.4f);
+
+        splashSong.start();
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

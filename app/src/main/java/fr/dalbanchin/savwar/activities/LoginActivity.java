@@ -8,6 +8,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import fr.dalbanchin.savwar.R;
+import fr.dalbanchin.savwar.model.Savoir;
+import fr.dalbanchin.savwar.storage.SavoirDatabaseStorage;
+import fr.dalbanchin.savwar.storage.utility.BaseDeDonnee;
 
 public class LoginActivity extends AppCompatActivity {
 

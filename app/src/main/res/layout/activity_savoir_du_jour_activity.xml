@@ -43,11 +43,12 @@
                 android:id="@+id/en_savoir_plus"
                 android:layout_width="234dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.8"
-                android:layout_marginBottom="20dp"
-                android:fontFamily="sans-serif"
                 android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="0.8"
+                android:fontFamily="sans-serif"
                 android:gravity="center_vertical"
+                android:linksClickable="true"
                 android:text="En savoir plus"
                 android:textColor="@color/textColor"
                 android:textSize="18sp" />
@@ -57,8 +58,8 @@
                 android:layout_width="46dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_weight="0.2"
                 android:layout_marginBottom="20dp"
+                android:layout_weight="0.2"
                 app:srcCompat="@drawable/icone_favoris" />
         </LinearLayout>
 

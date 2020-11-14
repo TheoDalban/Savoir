@@ -19,6 +19,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 
 import java.sql.Date;
@@ -54,19 +55,38 @@ public class MainActivity extends AppCompatActivity {
 
         this.savoir = (Button) findViewById(R.id.button_savoir);
 
+
         savoir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // on récupère la date actuelle
-                SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+                SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
                 Date date = new Date(System.currentTimeMillis());
                 String date_current = formatter.format(date);
+
                 String info = " voici les informations que vous aimeriez connaitre ";
                 String theme = " Astronaute ";
                 String lien = "https://icom.univ-lyon2.fr/formation/master-1-informatique#admission";
                 Integer favoring = 0;
                 String date_sav = date_current;
                 Savoir savoir = new Savoir(info,theme,lien,favoring,date_sav);
+
+                marvin = marvin.get(getBaseContext());
+
+                try{
+                    Savoir savoir_import = marvin.findDate();
+                }catch(Exception e){
+                    ArrayList<Savoir> listsavoir = (ArrayList<Savoir>) marvin.findAll();
+                    for(int i = 0; i < listsavoir.size(); i++) {
+                        marvin.update(i, listsavoir.get(i)); // changer la façon de faire avec les id d'array list car c'est faux
+                    }
+                }
+                Savoir savoir_import = marvin.findDate();
+                marvin.update(date_current,savoir_import);
+
+                ((TextView) findViewById(R.id.info_savoir)).setText(savoir_import.getInfo());
+                ((TextView) findViewById(R.id.en_savoir_plus)).setText(savoir_import.getLien());
+                //((ImageView) findViewById(R.id.image_savoir)).setImageDrawable(savoir_import.getTheme()+".png");
 
                 Intent savoirIntent = new Intent(getApplicationContext(), SavoirDuJour.class);
                 startActivity(savoirIntent);

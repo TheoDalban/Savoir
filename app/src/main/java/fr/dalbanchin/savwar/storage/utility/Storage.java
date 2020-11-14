@@ -9,9 +9,13 @@ public interface Storage<T> {
 
     T find(int id);
 
+    T findDate();
+
     int size();
 
     void update(int id, T object);
+
+    void update(String date, T object);
 
     void delete(int id);
 }

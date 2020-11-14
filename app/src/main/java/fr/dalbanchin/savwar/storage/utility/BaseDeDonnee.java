@@ -9,8 +9,13 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 
 import java.net.IDN;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+
+import fr.dalbanchin.savwar.Alea;
+import fr.dalbanchin.savwar.model.Savoir;
 
 abstract public class BaseDeDonnee<T> implements Storage<T>{
 
@@ -22,6 +27,8 @@ abstract public class BaseDeDonnee<T> implements Storage<T>{
     }
 
     protected abstract ContentValues objectToContentValues(int id, T object);
+
+    protected abstract ContentValues objectToContentValuesDate(String date, T object);
 
     protected abstract T cursorToObject(Cursor cursor);
 
@@ -54,6 +61,32 @@ abstract public class BaseDeDonnee<T> implements Storage<T>{
     }
 
     @Override
+    public T findDate() {
+        T object = null;
+        //On prend un nb aleatoire pour choisir un savoir dans un thème différent à chaque fois
+        Alea nb_alea = new Alea(0,1);
+        int nb = nb_alea.nombreAleatoire();
+        String order = "theme ";
+        if (nb == 0){
+            order += "ASC";
+        }else {
+            order += "DESC";
+        }
+
+        // on récupère la date actuelle
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = new Date(System.currentTimeMillis());
+        String date_current = formatter.format(date);
+
+        Cursor cursor = helper.getReadableDatabase().query(table, null,   "date = ?", new String[]{"NULL"}, null, null,order);
+        if (cursor.moveToNext()) object = cursorToObject(cursor);
+        cursor.close();
+
+
+        return object;
+    }
+
+    @Override
     public int size() {
         Cursor cursor = helper.getReadableDatabase().query(table, null, null, null, null, null, null);
         int size = cursor.getCount();
@@ -64,6 +97,11 @@ abstract public class BaseDeDonnee<T> implements Storage<T>{
     @Override
     public void update(int id, T object) {
         helper.getWritableDatabase().update(table, objectToContentValues(id, object), BaseColumns._ID + " = ?", new String[]{"" + id});
+    }
+
+    @Override
+    public void update(String date, T object) {
+        helper.getWritableDatabase().update(table, objectToContentValuesDate(date, object), "date = ?", new String[]{"" + date});
     }
 
     @Override

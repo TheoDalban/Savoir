@@ -40,7 +40,7 @@ public class SavoirDatabaseStorage extends BaseDeDonnee<Savoir> {
         private static final String SQL_CREATE_SAVOIR_ENTRIES = "CREATE TABLE " + TABLE_NAME + " ("
                 + BaseColumns._ID + " INTEGER PRIMARY KEY,"
                 + KEY_INFORMATION + " TEXT," + KEY_THEME  + " TEXT,"
-                + KEY_LIEN + " TEXT," + KEY_FAVORING + " INTEGER," + KEY_DATE + " TEXT)";
+                + KEY_LIEN + " TEXT," + KEY_FAVORING + " INTEGER," + KEY_DATE + " TEXT DEFAULT NULL)";
 
         public DatabaseHelper(Context context) {
             super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -68,6 +68,16 @@ public class SavoirDatabaseStorage extends BaseDeDonnee<Savoir> {
         values.put(KEY_LIEN, savwar.getLien());
         values.put(KEY_FAVORING, savwar.getFavoring());
         values.put(KEY_DATE, savwar.getDate());
+        return values;
+    }
+
+    protected ContentValues objectToContentValuesDate(String date, Savoir savwar) {
+        ContentValues values = new ContentValues();
+        values.put(KEY_INFORMATION, savwar.getInfo());
+        values.put(KEY_THEME , savwar.getTheme());
+        values.put(KEY_LIEN, savwar.getLien());
+        values.put(KEY_FAVORING, savwar.getFavoring());
+        values.put(KEY_DATE, date);
         return values;
     }
 

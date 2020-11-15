@@ -11,6 +11,7 @@ import fr.dalbanchin.savwar.storage.SavoirDatabaseStorage;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -91,9 +92,11 @@ public class RAdapterFavoris extends RecyclerView.Adapter<RAdapterFavoris.ViewHo
     @Override
     public void onBindViewHolder(RAdapterFavoris.ViewHolder viewHolder, int i) {
         final int changerPref;
+        final Savoir sav;
         TextView textView = viewHolder.textView;
         textView.setText(msgList.get(i).getTitle());
         changerPref = msgList.get(i).getId();
+        sav = msgList.get(i);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -101,6 +104,16 @@ public class RAdapterFavoris extends RecyclerView.Adapter<RAdapterFavoris.ViewHo
                 SavoirStorage.SAVOIR_DU_JOUR_ID = changerPref;
                 Intent intentSavoir = new Intent(context,SavoirDuJour.class);
                 context.startActivity(intentSavoir);
+            }
+        });
+        ImageView imageView = viewHolder.iconPlus;
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(sav.getLien()));
+                context.startActivity(intent);
+
             }
         });
     }

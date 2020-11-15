@@ -30,6 +30,8 @@ abstract public class BaseDeDonnee<T> implements Storage<T>{
 
     protected abstract ContentValues objectToContentValuesDate(String date, T object);
 
+    protected abstract ContentValues objectToContentValuesFavoring(int fav,T object);
+
     protected abstract T cursorToObject(Cursor cursor);
 
     protected abstract String cursorToString(Cursor cursor);
@@ -201,8 +203,12 @@ abstract public class BaseDeDonnee<T> implements Storage<T>{
 
     @Override
     public void updateDate(String date, int id, T object) {
-
         helper.getWritableDatabase().update(table, objectToContentValuesDate(date, object), BaseColumns._ID + " = ?", new String[]{"" + id});
+    }
+
+    @Override
+    public void updateFavoring(int fav, int id, T object){
+        helper.getWritableDatabase().update(table, objectToContentValuesFavoring(fav, object), BaseColumns._ID + " = ?", new String[]{"" + id});
     }
 
     @Override

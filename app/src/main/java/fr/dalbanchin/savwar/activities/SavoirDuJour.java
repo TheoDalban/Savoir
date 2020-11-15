@@ -3,12 +3,14 @@ package fr.dalbanchin.savwar.activities;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.net.CookieHandler;
@@ -64,7 +66,7 @@ public class SavoirDuJour extends AppCompatActivity {
             int nb_alea = nb.nombreAleatoire();
 
 
-            Savoir savoir = savoir_import.get(nb_alea);
+            final Savoir savoir = savoir_import.get(nb_alea);
 
             marvin.updateDate(date_current, savoir.getId(), savoir);
 
@@ -83,6 +85,34 @@ public class SavoirDuJour extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
+
+            final ImageView fav = findViewById(R.id.icon_fav);
+
+            if (savoir.getFavoring() == 0){
+                Drawable fav_complet = getResources().getDrawable(R.drawable.round_favorite_border_white_36);
+                fav.setImageDrawable(fav_complet);
+            }else{
+                Drawable fav_border = getResources().getDrawable(R.drawable.round_favorite_white_36);
+                fav.setImageDrawable(fav_border);
+            }
+
+            fav.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (savoir.getFavoring() == 0){
+
+                        Drawable fav_complet = getResources().getDrawable(R.drawable.round_favorite_white_36);
+                        fav.setImageDrawable(fav_complet);
+                        marvin.updateFavoring(1,savoir.getId(),savoir);
+                    }else{
+
+                        Drawable fav_border = getResources().getDrawable(R.drawable.round_favorite_border_white_36);
+                        fav.setImageDrawable(fav_border);
+                        marvin.updateFavoring(0,savoir.getId(),savoir);
+                    }
+                }
+            });
+
 
             SavoirStorage.setsettingsSAVOIRID(getApplicationContext(), savoir.getId());
 
@@ -97,7 +127,7 @@ public class SavoirDuJour extends AppCompatActivity {
             int nb_alea = nb.nombreAleatoire();
 
 
-            Savoir savoir = savoir_import.get(nb_alea);
+            final Savoir savoir = savoir_import.get(nb_alea);
 
             marvin.updateDate(date_current, savoir.getId(), savoir);
 
@@ -117,10 +147,35 @@ public class SavoirDuJour extends AppCompatActivity {
                 }
             });
 
+            final ImageView fav = findViewById(R.id.icon_fav);
+
+            if (savoir.getFavoring() == 0){
+                Drawable fav_complet = getResources().getDrawable(R.drawable.round_favorite_border_white_36);
+                fav.setImageDrawable(fav_complet);
+            }else{
+                Drawable fav_border = getResources().getDrawable(R.drawable.round_favorite_white_36);
+                fav.setImageDrawable(fav_border);
+            }
+
+            fav.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (savoir.getFavoring() == 0){
+                        marvin.updateFavoring(1,savoir.getId(),savoir);
+                        Drawable fav_complet = getResources().getDrawable(R.drawable.round_favorite_white_36);
+                        fav.setImageDrawable(fav_complet);
+                    }else{
+                        marvin.updateFavoring(0,savoir.getId(),savoir);
+                        Drawable fav_border = getResources().getDrawable(R.drawable.round_favorite_border_white_36);
+                        fav.setImageDrawable(fav_border);
+                    }
+                }
+            });
+
             SavoirStorage.setsettingsSAVOIRID(getApplicationContext(), savoir.getId());
         } else {
 
-            Savoir savoir = marvin.find(SavoirStorage.getsettingsSAVOIRID(getApplicationContext()));
+            final Savoir savoir = marvin.find(SavoirStorage.getsettingsSAVOIRID(getApplicationContext()));
 
             TextView lien = findViewById(R.id.en_savoir_plus);
             ((TextView) findViewById(R.id.info_savoir)).setText("" + savoir.getInfo() + "");
@@ -138,12 +193,36 @@ public class SavoirDuJour extends AppCompatActivity {
                 }
             });
 
+            final ImageView fav = findViewById(R.id.icon_fav);
+            if (savoir.getFavoring() == 0){
+                Drawable fav_complet = getResources().getDrawable(R.drawable.round_favorite_border_white_36);
+                fav.setImageDrawable(fav_complet);
+            }else{
+                Drawable fav_border = getResources().getDrawable(R.drawable.round_favorite_white_36);
+                fav.setImageDrawable(fav_border);
+            }
+
+            fav.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (savoir.getFavoring() == 0){
+                        marvin.updateFavoring(1,savoir.getId(),savoir);
+                        Drawable fav_complet = getResources().getDrawable(R.drawable.round_favorite_white_36);
+                        fav.setImageDrawable(fav_complet);
+                    }else{
+                        marvin.updateFavoring(0,savoir.getId(),savoir);
+                        Drawable fav_border = getResources().getDrawable(R.drawable.round_favorite_border_white_36);
+                        fav.setImageDrawable(fav_border);
+                    }
+                }
+            });
+
             SavoirStorage.setsettingsSAVOIRID(getApplicationContext(), savoir.getId());
 
         }
     }else if (SavoirStorage.getsettingsSavoirAfficheId(getApplicationContext()) > 1) {
 
-        Savoir savoir = marvin.find(SavoirStorage.getsettingsSavoirAfficheId(getApplicationContext()));
+        final Savoir savoir = marvin.find(SavoirStorage.getsettingsSavoirAfficheId(getApplicationContext()));
 
         TextView lien = findViewById(R.id.en_savoir_plus);
         ((TextView) findViewById(R.id.info_savoir)).setText("" + savoir.getInfo() + "");
@@ -158,6 +237,32 @@ public class SavoirDuJour extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(intent);
+            }
+        });
+
+        final ImageView fav = findViewById(R.id.icon_fav);
+        if (savoir.getFavoring() == 0){
+            Drawable fav_complet = getResources().getDrawable(R.drawable.round_favorite_border_white_36);
+            fav.setImageDrawable(fav_complet);
+        }else{
+            Drawable fav_border = getResources().getDrawable(R.drawable.round_favorite_white_36);
+            fav.setImageDrawable(fav_border);
+        }
+
+        fav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (savoir.getFavoring() == 0){
+
+                    Drawable fav_complet = getResources().getDrawable(R.drawable.round_favorite_white_36);
+                    fav.setImageDrawable(fav_complet);
+                    marvin.updateFavoring(1,savoir.getId(),savoir);
+                }else{
+
+                    Drawable fav_border = getResources().getDrawable(R.drawable.round_favorite_border_white_36);
+                    fav.setImageDrawable(fav_border);
+                    marvin.updateFavoring(0,savoir.getId(),savoir);
+                }
             }
         });
     }

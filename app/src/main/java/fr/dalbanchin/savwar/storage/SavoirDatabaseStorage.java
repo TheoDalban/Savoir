@@ -21,7 +21,7 @@ public class SavoirDatabaseStorage extends BaseDeDonnee<Savoir> {
     private static final int NUM_THEME = 3;
     private static final String KEY_LIEN = "lien";
     private static final int NUM_LIEN = 4;
-    private static final String KEY_FAVORING = "favoring"; // Boolean
+    private static final String KEY_FAVORING = "favoring";
     private static final int NUM_FAVORING = 5;
     private static final String KEY_DATE = "date";
     private static final int NUM_DATE = 6;
@@ -82,6 +82,17 @@ public class SavoirDatabaseStorage extends BaseDeDonnee<Savoir> {
         values.put(KEY_LIEN, savwar.getLien());
         values.put(KEY_FAVORING, savwar.getFavoring());
         values.put(KEY_DATE, date);
+        return values;
+    }
+
+    protected ContentValues objectToContentValuesFavoring(int favoring, Savoir savwar) {
+        ContentValues values = new ContentValues();
+        values.put(KEY_TITRE, savwar.getTitle());
+        values.put(KEY_INFORMATION, savwar.getInfo());
+        values.put(KEY_THEME , savwar.getTheme());
+        values.put(KEY_LIEN, savwar.getLien());
+        values.put(KEY_FAVORING, favoring);
+        values.put(KEY_DATE, savwar.getDate());
         return values;
     }
 

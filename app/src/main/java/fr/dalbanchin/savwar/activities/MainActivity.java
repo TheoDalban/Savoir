@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
         favoris.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SavoirStorage.setsettingsSAVOIRTHEME(getApplicationContext(), 2 );
+                SavoirStorage.setsettingsSAVOIRTHEME(getApplicationContext(), 0 );
                 Intent favorisIntent = new Intent(getApplicationContext(), FavorisActivity.class);
                 startActivity(favorisIntent);
             }

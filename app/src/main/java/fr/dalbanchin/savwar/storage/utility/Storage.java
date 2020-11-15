@@ -29,5 +29,7 @@ public interface Storage<T> {
 
     void updateDate(String date, int id, T object);
 
+    void updateFavoring(int fav, int id, T object);
+
     void delete(int id);
 }

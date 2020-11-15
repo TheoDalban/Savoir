@@ -43,20 +43,17 @@ public class MainActivity extends AppCompatActivity {
         this.savoir = (Button) findViewById(R.id.button_savoir);
 
 
-        if (SavoirStorage.getPreferencesSavoir(getApplicationContext()) == 0) {
+        if (SavoirStorage.getsettingsBDD(getApplicationContext()) == 0) {
 
             SavoirStorage.ajouterBdd(getBaseContext());
-            SavoirStorage.setPreferencesSavoir(getApplicationContext(),1);
+            SavoirStorage.setsettingsBDD(getApplicationContext(),1);
         }
 
 
         savoir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // on récupère la date actuelle
-                SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
-                Date date = new Date(System.currentTimeMillis());
-                String date_current = formatter.format(date);
+
 
                 /*String info = " voici les informations que vous aimeriez connaitre ";
                 String theme = " Astronaute ";

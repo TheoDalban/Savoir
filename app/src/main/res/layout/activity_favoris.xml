@@ -22,13 +22,14 @@
             <ImageView
                 android:id="@+id/home"
                 android:layout_width="15dp"
+                android:layout_marginLeft="14dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/home" />
+                app:srcCompat="?attr/homeAsUpIndicator" />
 
             <TextView
                 android:id="@+id/titre_favoris"
-                android:layout_width="295dp"
+                android:layout_width="277dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_weight="1"

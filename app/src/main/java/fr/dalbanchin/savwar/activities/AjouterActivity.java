@@ -45,11 +45,11 @@ public class AjouterActivity extends AppCompatActivity {
             marvin = marvin.get(getBaseContext());
 
             //Création d'un savoir
-            Savoir savoir = new Savoir(info,theme,lien,0,dateJ);
+            Savoir savoir = new Savoir("Titre",info,theme,lien,0,dateJ);
 
             //Ajout du savoir dans la BDDSQLITE
             marvin.insert(savoir);
-            savoir = new Savoir(info,theme,lien,0,dateJ);
+            savoir = new Savoir("Titre",info,theme,lien,0,dateJ);
             marvin.insert(savoir);
 
             System.out.println(marvin.findAll());

@@ -21,17 +21,18 @@
 
             <ImageView
                 android:id="@+id/home"
-                android:layout_width="match_parent"
+                android:layout_width="15dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.8"
-                app:srcCompat="@drawable/home" />
+                android:layout_weight="1"
+                android:layout_marginLeft="14dp"
+                app:srcCompat="?attr/homeAsUpIndicator" />
 
             <TextView
                 android:id="@+id/titre_theme"
-                android:layout_width="match_parent"
+                android:layout_width="277dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_weight="0.2"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:text="Thèmes"
                 android:textSize="24sp" />

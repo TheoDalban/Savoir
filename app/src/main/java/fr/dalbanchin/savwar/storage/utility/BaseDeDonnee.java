@@ -177,7 +177,7 @@ abstract public class BaseDeDonnee<T> implements Storage<T>{
     public List<String> findAllFavoring(){
         List<String> list = new ArrayList<>();
 
-        Cursor cursor = helper.getReadableDatabase().query(table, new String[]{"titre"},   "favoring" + " = ?", new String[]{""+1}, null, null,null);
+        Cursor cursor = helper.getReadableDatabase().query(table, new String[]{BaseColumns._ID,"titre"},   "favoring" + " = ?", new String[]{""+1}, null, null,null);
 
         while (cursor.moveToNext())
             list.add(cursorToString(cursor));
@@ -200,8 +200,9 @@ abstract public class BaseDeDonnee<T> implements Storage<T>{
     }
 
     @Override
-    public void update(String date, T object) {
-        helper.getWritableDatabase().update(table, objectToContentValuesDate(date, object), "date = ?", new String[]{"" + date});
+    public void updateDate(String date, int id, T object) {
+
+        helper.getWritableDatabase().update(table, objectToContentValuesDate(date, object), BaseColumns._ID + " = ?", new String[]{"" + id});
     }
 
     @Override

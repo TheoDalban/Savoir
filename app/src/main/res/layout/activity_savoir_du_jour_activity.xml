@@ -55,13 +55,17 @@
             android:textColor="@color/textColor"
             android:textSize="18sp" />
 
-        <ImageView
-            android:id="@+id/icon_favoris"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+
+        <com.github.ivbaranov.mfb.MaterialFavoriteButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_weight="0.2"
-            app:srcCompat="@drawable/round_favorite_border_white_36" />
+            app:mfb_animate_favorite="true"
+            app:mfb_color="white"
+            app:mfb_type="heart"
+            app:mfb_size="48"
+            />
+
     </LinearLayout>
 
     </LinearLayout>

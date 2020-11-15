@@ -160,6 +160,7 @@ public class SavoirDuJour extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        SavoirStorage.SAVOIR_DU_JOUR_ID = -1;
     }
 
 

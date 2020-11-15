@@ -8,7 +8,6 @@
     android:orientation="vertical"
     android:background="@color/backgroundColor2">
 
-
     <ImageView
         android:id="@+id/image_savoir"
         android:layout_width="match_parent"

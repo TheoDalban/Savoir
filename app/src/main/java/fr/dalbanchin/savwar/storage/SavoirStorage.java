@@ -21,6 +21,11 @@ public final class SavoirStorage {
     public static final int PREF_THEME_INT = 0;
     private static final int PREF_THEME_DEFAULT = PREF_THEME_INT;
 
+    private static final String SAVOIR_AFFICHE = "savoir_affiche";
+    public static int SAVOIR_DU_JOUR_ID = -1;
+    public static final int PREF_SAVOIR_AFFICHE_ID = 0;
+    private static final int PREF_SAVOIR_AFFICHE_ID_DEFAULT = PREF_SAVOIR_AFFICHE_ID;
+
     private static SharedPreferences getPreferences(Context context) {
         return context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
     }
@@ -49,10 +54,22 @@ public final class SavoirStorage {
         return getPreferences(context).getInt(PREF_THEME, PREF_THEME_DEFAULT);
     }
 
+    public static void setsettingsSavoirAfficheId(Context context, int id) {
+        getPreferences(context).edit().putInt(SAVOIR_AFFICHE, id).apply();
+    }
+
+    public static int getsettingsSavoirAfficheId(Context context) {
+        return getPreferences(context).getInt(SAVOIR_AFFICHE, PREF_SAVOIR_AFFICHE_ID_DEFAULT);
+    }
+
     public static void ajouterBdd(Context context){
 
         marvin = marvin.get(context);
-        Savoir savoir = new Savoir("Filet-o-Sish","Dans les années 60 Mc Donald’s a créé le Filet-o-Fish pour les catholiques, car les catholiques pratiquant ne mangeant pas de viande le vendredi son chiffre d'affaires n'était pas aussi bon que les autres jours. De nos jours 90% des personnes achetant le Filet-o-Fish sont musulmans.", "Cuisine", "https://fr.wikipedia.org/wiki/Filet-O-Fish", 0, "vide");
+
+        Savoir savoir = new Savoir("vide","vide","vide","vide",0,"savoir_vide");
+        marvin.insert(savoir);
+
+        savoir = new Savoir("Filet-o-Sish","Dans les années 60 Mc Donald’s a créé le Filet-o-Fish pour les catholiques, car les catholiques pratiquant ne mangeant pas de viande le vendredi son chiffre d'affaires n'était pas aussi bon que les autres jours. De nos jours 90% des personnes achetant le Filet-o-Fish sont musulmans.", "Cuisine", "https://fr.wikipedia.org/wiki/Filet-O-Fish", 0, "vide");
         marvin.insert(savoir);
 
         savoir = new Savoir("Le petit beurre","Né en 1886, le petit beurre a une forme tout sauf anodine. Ses quatre coins symbolisent les 4 saisons, tandis que les 52 « dents » du biscuit représentent elles les semaines de l’année.Et les concepteurs du biscuit ont même poussé le souci du détail jusqu’à inclure 24 points au centre pour représenter les heures de la journée.", "Cuisine", "https://fr.wikipedia.org/wiki/Petit_Beurre", 0, "vide");

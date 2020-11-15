@@ -26,7 +26,8 @@ import java.util.List;
 
 
 public class RAdapterFavoris extends RecyclerView.Adapter<RAdapterFavoris.ViewHolder> {
-    SavoirDatabaseStorage marvin,jesus;
+    private final Context context;
+    SavoirDatabaseStorage marvin;
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public LinearLayout row;
@@ -53,6 +54,7 @@ public class RAdapterFavoris extends RecyclerView.Adapter<RAdapterFavoris.ViewHo
     List<Savoir> msgList;
 
     public RAdapterFavoris(Context c) {
+        this.context = c;
         marvin = marvin.get(c);
         switch(SavoirStorage.getsettingsSAVOIRTHEME(c)){
             case 0:
@@ -88,12 +90,16 @@ public class RAdapterFavoris extends RecyclerView.Adapter<RAdapterFavoris.ViewHo
 
     @Override
     public void onBindViewHolder(RAdapterFavoris.ViewHolder viewHolder, int i) {
+        final int changerPref;
         TextView textView = viewHolder.textView;
         textView.setText(msgList.get(i).getTitle());
+        changerPref = msgList.get(i).getId();
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              //  Intent intentSavoir = new Intent(SavoirDuJour.class);
+                SavoirStorage.setsettingsSavoirAfficheId(context,changerPref);
+                Intent intentSavoir = new Intent(context,SavoirDuJour.class);
+                context.startActivity(intentSavoir);
             }
         });
     }

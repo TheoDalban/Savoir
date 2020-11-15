@@ -40,9 +40,17 @@ public class SavoirDuJour extends AppCompatActivity {
         marvin = marvin.get(getBaseContext());
         String dateMarvin;
 
+        if (SavoirStorage.SAVOIR_DU_JOUR_ID == -1){
+            int id = marvin.find(1).getId();
+            SavoirStorage.SAVOIR_DU_JOUR_ID = id;
+            SavoirStorage.setsettingsSavoirAfficheId(getApplicationContext(),id);
+        }
+
+
+    if (SavoirStorage.getsettingsSavoirAfficheId(getApplicationContext()) == 1) {
         if (SavoirStorage.getsettingsSAVOIRID(getApplicationContext()) != -1) {
             dateMarvin = marvin.find(SavoirStorage.getsettingsSAVOIRID(getApplicationContext())).getDate();
-        }else{
+        } else {
             dateMarvin = "nexiste pas";
         }
         if (SavoirStorage.getsettingsSAVOIRID(getApplicationContext()) == -1) {
@@ -76,10 +84,9 @@ public class SavoirDuJour extends AppCompatActivity {
                 }
             });
 
-            SavoirStorage.setsettingsSAVOIRID(getApplicationContext(),savoir.getId());
-        }
+            SavoirStorage.setsettingsSAVOIRID(getApplicationContext(), savoir.getId());
 
-        else if (!dateMarvin.contains(date_current))  {
+        } else if (!dateMarvin.contains(date_current)) {
             System.out.println(date_current);
             System.out.println(dateMarvin);
             List<Savoir> savoir_import;
@@ -110,10 +117,8 @@ public class SavoirDuJour extends AppCompatActivity {
                 }
             });
 
-            SavoirStorage.setsettingsSAVOIRID(getApplicationContext(),savoir.getId());
-        }
-
-        else {
+            SavoirStorage.setsettingsSAVOIRID(getApplicationContext(), savoir.getId());
+        } else {
 
             Savoir savoir = marvin.find(SavoirStorage.getsettingsSAVOIRID(getApplicationContext()));
 
@@ -133,18 +138,31 @@ public class SavoirDuJour extends AppCompatActivity {
                 }
             });
 
-            SavoirStorage.setsettingsSAVOIRID(getApplicationContext(),savoir.getId());
+            SavoirStorage.setsettingsSAVOIRID(getApplicationContext(), savoir.getId());
 
         }
+    }else if (SavoirStorage.getsettingsSavoirAfficheId(getApplicationContext()) > 1) {
+
+        Savoir savoir = marvin.find(SavoirStorage.getsettingsSavoirAfficheId(getApplicationContext()));
+
+        TextView lien = findViewById(R.id.en_savoir_plus);
+        ((TextView) findViewById(R.id.info_savoir)).setText("" + savoir.getInfo() + "");
+
+        SpannableString content = new SpannableString("En savoir plus");
+        content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
+        lien.setText(content);
+
+        final Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(savoir.getLien()));
+        lien.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(intent);
+            }
+        });
+    }
 
 
-
-    //    if (SavoirStorage.getPreferencesSavoir(getApplicationContext()) == 0) {
-
-
-
-
-           // SavoirStorage.setPreferencesSavoir(getApplicationContext(),0);
 
     }
 }

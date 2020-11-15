@@ -13,6 +13,16 @@ public interface Storage<T> {
 
     List<T> findAllDate();
 
+    List<T> findAllAnimaux();
+    List<T> findAllCuisine();
+    List<T> findAllEspace();
+    List<T> findAllGeographie();
+    List<T> findAllHistoire();
+    List<T> findAllHumain();
+    List<T> findAllNature();
+
+    List<String> findAllFavoring();
+
     int size();
 
     void update(int id, T object);

@@ -15,7 +15,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:gravity="center"
-        android:paddingTop="10dp"
+        android:paddingTop="40dp"
         android:paddingBottom="10dp"
         android:text="NOM DU THEME"
         android:textSize="30sp"

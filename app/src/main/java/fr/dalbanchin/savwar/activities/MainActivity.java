@@ -54,32 +54,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
-                /*String info = " voici les informations que vous aimeriez connaitre ";
-                String theme = " Astronaute ";
-                String lien = "https://icom.univ-lyon2.fr/formation/master-1-informatique#admission";
-                Integer favoring = 0;
-                String date_sav = date_current;
-                Savoir savoir = new Savoir(info,theme,lien,favoring,date_sav);*/
-
-/*                try {
-                    savoir_import = (Savoir) marvin.findDate();
-                    marvin.update(date_current,savoir_import);
-                }catch (SQLException e){
-                    e.printStackTrace();
-                    savoir_import = savoir;
-
-                    //ArrayList<Savoir> listsavoir = (ArrayList<Savoir>) marvin.findAll();
-                    //for(int i = 0; i < listsavoir.size(); i++) {
-                     //   marvin.update(i, listsavoir.get(i)); // changer la façon de faire avec les id d'array list car c'est faux
-                    //}
-                }*/
-
-
-
-                //marvin.update(date_current,savoir_import);
-
-                //((ImageView) findViewById(R.id.image_savoir)).setImageDrawable(savoir_import.getTheme()+".png");
                 SavoirStorage.SAVOIR_DU_JOUR_ID = -1;
                 Intent savoirIntent = new Intent(getApplicationContext(), SavoirDuJour.class);
                 startActivity(savoirIntent);

@@ -30,6 +30,7 @@ public class RAdapterFavoris extends RecyclerView.Adapter<RAdapterFavoris.ViewHo
     private final Context context;
     SavoirDatabaseStorage marvin;
 
+
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public LinearLayout row;
 
@@ -129,6 +130,7 @@ public class RAdapterFavoris extends RecyclerView.Adapter<RAdapterFavoris.ViewHo
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
 
         View view = inflater.inflate(R.layout.row_favoris, parent, false);
+
 
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;

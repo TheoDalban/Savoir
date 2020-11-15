@@ -98,6 +98,7 @@ public class RAdapterFavoris extends RecyclerView.Adapter<RAdapterFavoris.ViewHo
             @Override
             public void onClick(View v) {
                 SavoirStorage.setsettingsSavoirAfficheId(context,changerPref);
+                SavoirStorage.SAVOIR_DU_JOUR_ID = changerPref;
                 Intent intentSavoir = new Intent(context,SavoirDuJour.class);
                 context.startActivity(intentSavoir);
             }

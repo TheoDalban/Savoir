@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                 //marvin.update(date_current,savoir_import);
 
                 //((ImageView) findViewById(R.id.image_savoir)).setImageDrawable(savoir_import.getTheme()+".png");
-
+                SavoirStorage.SAVOIR_DU_JOUR_ID = -1;
                 Intent savoirIntent = new Intent(getApplicationContext(), SavoirDuJour.class);
                 startActivity(savoirIntent);
             }

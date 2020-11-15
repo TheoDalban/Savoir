@@ -15,7 +15,7 @@
         android:layout_weight="0.05"
         android:paddingTop="40dp"
         android:paddingBottom="40dp"
-        app:srcCompat="@drawable/logoblack" />
+        app:srcCompat="@drawable/savwarlogo" />
 
     <TextView
         android:id="@+id/info_savoir"
@@ -50,7 +50,7 @@
             android:fontFamily="sans-serif"
             android:gravity="center_vertical"
             android:linksClickable="true"
-            android:paddingLeft="40dp"
+            android:paddingLeft="30dp"
             android:text=""
             android:textColor="@color/textColor"
             android:textSize="18sp" />

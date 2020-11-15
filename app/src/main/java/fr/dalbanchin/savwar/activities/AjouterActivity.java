@@ -2,8 +2,6 @@ package fr.dalbanchin.savwar.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -12,10 +10,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import fr.dalbanchin.savwar.R;
-import fr.dalbanchin.savwar.adapter.RAdapterTheme;
 import fr.dalbanchin.savwar.model.Savoir;
 import fr.dalbanchin.savwar.storage.SavoirDatabaseStorage;
-import fr.dalbanchin.savwar.storage.utility.BaseDeDonnee;
 
 public class AjouterActivity extends AppCompatActivity {
 
@@ -63,4 +59,6 @@ public class AjouterActivity extends AppCompatActivity {
             finish();
         }
     }
+
+
 }

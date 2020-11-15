@@ -7,7 +7,7 @@
 
     <ImageView
         android:id="@+id/logo"
-        android:src="@drawable/logoblack"
+        android:src="@drawable/savwarlogo"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

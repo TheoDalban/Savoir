@@ -15,6 +15,7 @@ public class ThemeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_theme);
 
+
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.RView);
         RAdapterTheme radapter = new RAdapterTheme(this);
         recyclerView.setAdapter(radapter);

@@ -32,8 +32,6 @@ public class Savoir {
         return info;
     }
 
-    // Il n'existe pas de theme enum en sql lite pq pas créer des constantes de thèmes dans ce fichier ?
-    // TODO créer des valeurs par thèmes ?
 
     public String getTheme() {
         return theme;
@@ -50,6 +48,11 @@ public class Savoir {
     public String getDate() {
         return date;
     }
+
+    public static void setID(int ID) {
+        Savoir.ID = ID;
+    }
+
 
     @Override
     public String toString() {

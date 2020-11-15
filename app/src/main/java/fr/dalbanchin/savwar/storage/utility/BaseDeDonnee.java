@@ -63,27 +63,27 @@ abstract public class BaseDeDonnee<T> implements Storage<T>{
     @Override
     public T findDate() {
         T object = null;
-        //On prend un nb aleatoire pour choisir un savoir dans un thème différent à chaque fois
-        Alea nb_alea = new Alea(0,1);
-        int nb = nb_alea.nombreAleatoire();
-        String order = "theme ";
-        if (nb == 0){
-            order += "ASC";
-        }else {
-            order += "DESC";
+
+        Cursor cursor = helper.getReadableDatabase().query(table, null,   "date" + " = ?", new String[]{"vide"}, null, null,null);
+        if (cursor.moveToNext()) {
+            object = cursorToObject(cursor);
         }
-
-        // on récupère la date actuelle
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
-        Date date = new Date(System.currentTimeMillis());
-        String date_current = formatter.format(date);
-
-        Cursor cursor = helper.getReadableDatabase().query(table, null,   "date = ?", new String[]{"NULL"}, null, null,order);
-        if (cursor.moveToNext()) object = cursorToObject(cursor);
         cursor.close();
 
-
         return object;
+    }
+
+    @Override
+    public List<T> findAllDate(){
+        List<T> list = new ArrayList<>();
+
+        Cursor cursor = helper.getReadableDatabase().query(table, null,   "date" + " = ?", new String[]{"vide"}, null, null,null);
+
+        while (cursor.moveToNext())
+            list.add(cursorToObject(cursor));
+        cursor.close();
+
+        return list;
     }
 
     @Override

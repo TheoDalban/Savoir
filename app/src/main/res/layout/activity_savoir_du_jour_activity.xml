@@ -17,50 +17,51 @@
         android:paddingBottom="40dp"
         app:srcCompat="@drawable/logoblack" />
 
+    <TextView
+        android:id="@+id/info_savoir"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.4"
+        android:fontFamily="@font/aclonica"
+        android:gravity="center_vertical"
+        android:lineSpacingExtra="12sp"
+        android:paddingLeft="60dp"
+        android:paddingTop="20dp"
+        android:paddingRight="60dp"
+        android:paddingBottom="20dp"
+        android:text=""
+        android:textColor="@color/textColor"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.75"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
         <TextView
-            android:id="@+id/info_savoir"
-            android:layout_width="match_parent"
+            android:id="@+id/en_savoir_plus"
+            android:layout_width="119dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.4"
-            android:fontFamily="@font/aclonica"
-            android:paddingLeft="60dp"
-            android:paddingTop="20dp"
-            android:paddingRight="60dp"
-            android:paddingBottom="20dp"
-            android:text="INFORMATIONS DU SAVOIR"
+            android:layout_gravity="center"
+            android:layout_weight="0.8"
+            android:fontFamily="sans-serif"
+            android:gravity="center_vertical"
+            android:linksClickable="true"
+            android:paddingLeft="40dp"
+            android:text=""
             android:textColor="@color/textColor"
             android:textSize="18sp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.8"
-            android:orientation="horizontal"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp">
-
-            <TextView
-                android:id="@+id/en_savoir_plus"
-                android:layout_width="234dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginBottom="20dp"
-                android:layout_weight="0.8"
-                android:fontFamily="sans-serif"
-                android:gravity="center_vertical"
-                android:linksClickable="true"
-                android:text="En savoir plus"
-                android:textColor="@color/textColor"
-                android:textSize="18sp" />
-
-            <ImageView
-                android:id="@+id/icon_favoris"
-                android:layout_width="46dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginBottom="20dp"
-                android:layout_weight="0.2"
-                app:srcCompat="@drawable/icone_favoris" />
-        </LinearLayout>
+        <ImageView
+            android:id="@+id/icon_favoris"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.2"
+            app:srcCompat="@drawable/round_favorite_border_white_36" />
+    </LinearLayout>
 
     </LinearLayout>

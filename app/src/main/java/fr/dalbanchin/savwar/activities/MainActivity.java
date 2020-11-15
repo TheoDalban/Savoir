@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
+import android.database.SQLException;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -24,12 +25,16 @@ import android.widget.TextView;
 
 
 import java.sql.Date;
+import java.sql.SQLDataException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.List;
 
+import fr.dalbanchin.savwar.Alea;
 import fr.dalbanchin.savwar.R;
 import fr.dalbanchin.savwar.model.Savoir;
 import fr.dalbanchin.savwar.storage.SavoirDatabaseStorage;
+import fr.dalbanchin.savwar.storage.SavoirStorage;
 import fr.dalbanchin.savwar.storage.utility.BaseDeDonnee;
 import android.media.MediaPlayer;
 
@@ -47,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     private Button journuit;
 
     SavoirDatabaseStorage marvin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -64,29 +70,30 @@ public class MainActivity extends AppCompatActivity {
                 Date date = new Date(System.currentTimeMillis());
                 String date_current = formatter.format(date);
 
-                String info = " voici les informations que vous aimeriez connaitre ";
+                /*String info = " voici les informations que vous aimeriez connaitre ";
                 String theme = " Astronaute ";
                 String lien = "https://icom.univ-lyon2.fr/formation/master-1-informatique#admission";
                 Integer favoring = 0;
                 String date_sav = date_current;
-                Savoir savoir = new Savoir(info,theme,lien,favoring,date_sav);
-                marvin = marvin.get(getBaseContext());
+                Savoir savoir = new Savoir(info,theme,lien,favoring,date_sav);*/
 
-                marvin = marvin.get(getBaseContext());
+/*                try {
+                    savoir_import = (Savoir) marvin.findDate();
+                    marvin.update(date_current,savoir_import);
+                }catch (SQLException e){
+                    e.printStackTrace();
+                    savoir_import = savoir;
 
-                try{
-                    Savoir savoir_import = marvin.findDate();
-                }catch(Exception e){
-                    ArrayList<Savoir> listsavoir = (ArrayList<Savoir>) marvin.findAll();
-                    for(int i = 0; i < listsavoir.size(); i++) {
-                        marvin.update(i, listsavoir.get(i)); // changer la façon de faire avec les id d'array list car c'est faux
-                    }
-                }
-                Savoir savoir_import = marvin.findDate();
-                marvin.update(date_current,savoir_import);
+                    //ArrayList<Savoir> listsavoir = (ArrayList<Savoir>) marvin.findAll();
+                    //for(int i = 0; i < listsavoir.size(); i++) {
+                     //   marvin.update(i, listsavoir.get(i)); // changer la façon de faire avec les id d'array list car c'est faux
+                    //}
+                }*/
 
-                ((TextView) findViewById(R.id.info_savoir)).setText(savoir_import.getInfo());
-                ((TextView) findViewById(R.id.en_savoir_plus)).setText(savoir_import.getLien());
+
+
+                //marvin.update(date_current,savoir_import);
+
                 //((ImageView) findViewById(R.id.image_savoir)).setImageDrawable(savoir_import.getTheme()+".png");
 
                 Intent savoirIntent = new Intent(getApplicationContext(), SavoirDuJour.class);
@@ -122,16 +129,16 @@ public class MainActivity extends AppCompatActivity {
                 Savoir savoir = new Savoir("Dans les années 60 Mc Donald’s a créé le Filet-o-Fish pour les catholiques, car les catholiques pratiquant ne mangeant pas de viande le vendredi son chiffre d'affaires n'était pas aussi bon que les autres jours. De nos jours 90% des personnes achetant le Filet-o-Fish sont musulmans.","Cuisine","https://fr.wikipedia.org/wiki/Filet-O-Fish",0,null);
                 marvin.insert(savoir);
 
-                savoir = new Savoir("Né en 1886, le petit beurre a une forme tout sauf anodine. Ses quatre coins symbolisent les 4 saisons, tandis que les 52 « dents » du biscuit représentent elles les semaines de l’année.Et les concepteurs du biscuit ont même poussé le souci du détail jusqu’à inclure 24 points au centre pour représenter les heures de la journée.","Cuisine","https://fr.wikipedia.org/wiki/Petit_Beurre",0,null);
+                savoir = new Savoir("Né en 1886, le petit beurre a une forme tout sauf anodine. Ses quatre coins symbolisent les 4 saisons, tandis que les 52 « dents » du biscuit représentent elles les semaines de l’année.Et les concepteurs du biscuit ont même poussé le souci du détail jusqu’à inclure 24 points au centre pour représenter les heures de la journée.","Cuisine","https://fr.wikipedia.org/wiki/Petit_Beurre",0,"vide");
                 marvin.insert(savoir);
 
-                savoir = new Savoir("L’aliment le plus volé dans le monde est le fromage, selon une étude réalisée en 2011 en Grande-Bretagne 4% du fromage dans le monde est volé !","Cuisine","https://www.lesaviezvous.net/loisirs/cuisine/laliment-le-plus-vole-dans-le-monde-est-le-fromage.html#:~:text=L%E2%80%99aliment%20le%20plus%20vol%C3%A9%20dans%20le%20monde%20est,est%20l%E2%80%99aliment%20le%20plus%20vol%C3%A9%20dans%20le%20monde",0,null);
+                savoir = new Savoir("L’aliment le plus volé dans le monde est le fromage, selon une étude réalisée en 2011 en Grande-Bretagne 4% du fromage dans le monde est volé !","Cuisine","https://www.lesaviezvous.net/loisirs/cuisine/laliment-le-plus-vole-dans-le-monde-est-le-fromage.html#:~:text=L%E2%80%99aliment%20le%20plus%20vol%C3%A9%20dans%20le%20monde%20est,est%20l%E2%80%99aliment%20le%20plus%20vol%C3%A9%20dans%20le%20monde",0,"vide");
                 marvin.insert(savoir);
 
                 savoir = new Savoir("Le miel à une durée de vie illimitée ! Le miel contient des agents bactériostatiques on peut donc le laisser 100ans dans un placard il sera le meme.","Cuisine","https://www.cuisineaz.com/diaporamas/choses-insolites-aliments-2130/interne/recette/4.aspx",0,null);
                 marvin.insert(savoir);
 
-                savoir = new Savoir("Les chiffres sont tout simplement incroyables : chaque seconde dans le monde, ce sont plus de 4000 litres de Coca-Cola qui sont bus !","Cuisine","https://www.cuisineaz.com/diaporamas/choses-insolites-aliments-2130/interne/recette/3.aspx",0,null);
+                savoir = new Savoir("Les chiffres sont tout simplement incroyables : chaque seconde dans le monde, ce sont plus de 4000 litres de Coca-Cola qui sont bus !","Cuisine","https://www.cuisineaz.com/diaporamas/choses-insolites-aliments-2130/interne/recette/3.aspx",0,"vide");
                 marvin.insert(savoir);
 
                 savoir = new Savoir("la surface terrestre est lisse à ±0,1% en comparerà sa taille, ce qui correspond à une perfection que n’atteignent même pas les boules de billard.","Espace","http://claudelafleur.qc.ca/Terre-parfaite.html",0,null);
@@ -146,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
                 savoir = new Savoir("-273,15°C , ce chiffre est la température de l'espace, ou encore le zéro absolu, iL n'existe pas plus froid de nos jours, cette température a été prise dans l'espace le plus loin possible de toutes sources de chaleur.","Espace","https://www.guichetdusavoir.org/viewtopic.php?t=37950",0,null);
                 marvin.insert(savoir);
 
-                savoir = new Savoir("Le télescope Hubble flotte au-dessus de nos têtes depuis les années 1990 à 570 km de la Terre, malgrès des début difficile il n'a pas fonctionner pendant 3 ans mais maintenant il prend des photos tous simplement fantastiques et d'une qualité remarquable.","Espace","https://www.science-et-vie.com/ciel-et-espace/les-photos-les-plus-spectaculaires-prises-par-le-telescope-hubble-59165",0,null);
+                savoir = new Savoir("Le télescope Hubble flotte au-dessus de nos têtes depuis les années 1990 à 570 km de la Terre, malgrès des début difficile il n'a pas fonctionner pendant 3 ans mais maintenant il prend des photos tous simplement fantastiques et d'une qualité remarquable.","Espace","https://www.science-et-vie.com/ciel-et-espace/les-photos-les-plus-spectaculaires-prises-par-le-telescope-hubble-59165",0,"vide");
                 marvin.insert(savoir);
 
                 savoir = new Savoir("Il pleut des tonnes de diamants chaque année sur saturne En 2013, lors d’une conférence de la Société américaine d’astronomie, le docteur Kevin Baines, de l’Université du Wisconsin à Madison et de l’Agence spatiale américaine (la NASA), a fait part d’une découverte étonnante :il pleut des diamants sur Saturne et Jupiter.","Espace","https://www.bfmtv.com/sciences/science-de-possibles-pluies-de-diamants-sur-saturne-et-jupiter_AN-201310150102.html",0,null);

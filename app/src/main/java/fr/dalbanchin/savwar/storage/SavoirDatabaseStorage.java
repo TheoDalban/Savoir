@@ -40,7 +40,7 @@ public class SavoirDatabaseStorage extends BaseDeDonnee<Savoir> {
         private static final String SQL_CREATE_SAVOIR_ENTRIES = "CREATE TABLE " + TABLE_NAME + " ("
                 + BaseColumns._ID + " INTEGER PRIMARY KEY,"
                 + KEY_INFORMATION + " TEXT," + KEY_THEME  + " TEXT,"
-                + KEY_LIEN + " TEXT," + KEY_FAVORING + " INTEGER," + KEY_DATE + " TEXT DEFAULT NULL)";
+                + KEY_LIEN + " TEXT," + KEY_FAVORING + " INTEGER," + KEY_DATE + " TEXT DEFAULT \"vide\")";
 
         public DatabaseHelper(Context context) {
             super(context, DATABASE_NAME, null, DATABASE_VERSION);

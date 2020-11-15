@@ -11,6 +11,8 @@ public interface Storage<T> {
 
     T findDate();
 
+    List<T> findAllDate();
+
     int size();
 
     void update(int id, T object);

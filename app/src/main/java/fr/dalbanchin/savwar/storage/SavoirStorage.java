@@ -17,6 +17,10 @@ public final class SavoirStorage {
     public static final int PREF_ID_INT = -1;
     private static final int PREF_ID_DEFAULT = PREF_ID_INT;
 
+    private static final String PREF_THEME = "id";
+    public static final int PREF_THEME_INT = 0;
+    private static final int PREF_THEME_DEFAULT = PREF_THEME_INT;
+
     private static SharedPreferences getPreferences(Context context) {
         return context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
     }
@@ -37,6 +41,13 @@ public final class SavoirStorage {
         return getPreferences(context).getInt(PREF_ID, PREF_ID_DEFAULT);
     }
 
+    public static void setsettingsSAVOIRTHEME(Context context, int id) {
+        getPreferences(context).edit().putInt(PREF_THEME, id).apply();
+    }
+
+    public static int getsettingsSAVOIRTHEME(Context context) {
+        return getPreferences(context).getInt(PREF_THEME, PREF_THEME_DEFAULT);
+    }
 
     public static void ajouterBdd(Context context){
 

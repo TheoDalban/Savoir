@@ -21,7 +21,7 @@ public interface Storage<T> {
     List<T> findAllHumain();
     List<T> findAllNature();
 
-    List<String> findAllFavoring();
+    List<T> findAllFavoring();
 
     int size();
 

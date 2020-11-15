@@ -2,9 +2,13 @@ package fr.dalbanchin.savwar.adapter;
 
 
 import fr.dalbanchin.savwar.R;
+import fr.dalbanchin.savwar.activities.FavorisActivity;
+import fr.dalbanchin.savwar.activities.SavoirDuJour;
+import fr.dalbanchin.savwar.storage.SavoirStorage;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +27,7 @@ public class RAdapterTheme extends RecyclerView.Adapter<RAdapterTheme.ThemeHolde
     ArrayList<String> msgList;
     
     final static protected String T_AUTRE = "AUTRE";
+    final static protected String T_ANIMAUX = "ANIMAUX";
     final static protected String T_CUISINE = "CUISINE";
     final static protected String T_ESPACE = "ESPACE";
     final static protected String T_GEOGRAPHIE = "GEOGRAPHIE";
@@ -49,6 +54,7 @@ public class RAdapterTheme extends RecyclerView.Adapter<RAdapterTheme.ThemeHolde
     public RAdapterTheme(Context c) {
         msgList = new ArrayList<String>();
         msgList.add(T_AUTRE);
+        msgList.add(T_ANIMAUX);
         msgList.add(T_CUISINE);
         msgList.add(T_ESPACE);
         msgList.add(T_GEOGRAPHIE);
@@ -69,20 +75,42 @@ public class RAdapterTheme extends RecyclerView.Adapter<RAdapterTheme.ThemeHolde
             public void onClick(View v) {
                 switch(msgList.get(j)){
                     case T_AUTRE:
-                        System.out.println("brurhhh");
                         Toast.makeText(v.getContext(),"C'est vide pour l'instant",Toast.LENGTH_LONG).show();
                         break;
+                    case T_ANIMAUX:
+                        SavoirStorage.setsettingsSAVOIRTHEME(context, 1 );
+                        Intent animauxIntent = new Intent(context, FavorisActivity.class);
+                        context.startActivity(animauxIntent);
+                        break;
                     case T_CUISINE:
+                        SavoirStorage.setsettingsSAVOIRTHEME(context, 2 );
+                        Intent cuisineIntent = new Intent(context, FavorisActivity.class);
+                        context.startActivity(cuisineIntent);
                         break;
                     case T_ESPACE:
+                        SavoirStorage.setsettingsSAVOIRTHEME(context, 3 );
+                        Intent espaceIntent = new Intent(context, FavorisActivity.class);
+                        context.startActivity(espaceIntent);
                         break;
                     case T_GEOGRAPHIE:
+                        SavoirStorage.setsettingsSAVOIRTHEME(context, 4 );
+                        Intent geographieIntent = new Intent(context, FavorisActivity.class);
+                        context.startActivity(geographieIntent);
                         break;
                     case T_HISTOIRE:
+                        SavoirStorage.setsettingsSAVOIRTHEME(context, 5 );
+                        Intent histoireIntent = new Intent(context, FavorisActivity.class);
+                        context.startActivity(histoireIntent);
                         break;
                     case T_HUMAIN:
+                        SavoirStorage.setsettingsSAVOIRTHEME(context, 6 );
+                        Intent humainIntent = new Intent(context, FavorisActivity.class);
+                        context.startActivity(humainIntent);
                         break;
                     case T_NATURE:
+                        SavoirStorage.setsettingsSAVOIRTHEME(context, 7 );
+                        Intent natureIntent = new Intent(context, FavorisActivity.class);
+                        context.startActivity(natureIntent);
                         break;
                     default:
                         Toast.makeText(v.getContext(),"Ce thème n'existe peut-être pas encore dans nos données",Toast.LENGTH_LONG).show();

@@ -41,25 +41,25 @@ public class RAdapterFavoris extends RecyclerView.Adapter<RAdapterFavoris.ViewHo
             textView = (TextView) itemView.findViewById(R.id.text_row_fav);
             iconPlus = (ImageView) itemView.findViewById(R.id.plusicon);
         }
+
         @Override
-        public void onClick (View v) {
-            int pos = getAdapterPosition();
-            Toast.makeText(v.getContext(), msgList.get(pos), Toast.LENGTH_LONG).show();
+        public void onClick(View v) {
+
         }
     }
 
-    List<String> msgList;
-
+    List<Savoir> msgList;
 
     public RAdapterFavoris(Context c) {
         marvin = marvin.get(c);
+
         msgList = marvin.findAllFavoring();
     }
 
     @Override
     public void onBindViewHolder(RAdapterFavoris.ViewHolder viewHolder, int i) {
         TextView textView = viewHolder.textView;
-        textView.setText(msgList.get(i));
+        textView.setText(msgList.get(i).getTitle());
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -34,7 +34,7 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Favoris"
+                android:text="Les Savoirs"
                 android:textColor="#FFFFFF"
                 android:textSize="30sp" />
 

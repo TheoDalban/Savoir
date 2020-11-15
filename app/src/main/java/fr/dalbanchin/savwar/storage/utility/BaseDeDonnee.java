@@ -174,13 +174,13 @@ abstract public class BaseDeDonnee<T> implements Storage<T>{
         return list;
     }
     @Override
-    public List<String> findAllFavoring(){
-        List<String> list = new ArrayList<>();
+    public List<T> findAllFavoring(){
+        List<T> list = new ArrayList<>();
 
-        Cursor cursor = helper.getReadableDatabase().query(table, new String[]{BaseColumns._ID,"titre"},   "favoring" + " = ?", new String[]{""+1}, null, null,null);
+        Cursor cursor = helper.getReadableDatabase().query(table, null,   "favoring" + " = ?", new String[]{""+1}, null, null,null);
 
         while (cursor.moveToNext())
-            list.add(cursorToString(cursor));
+            list.add(cursorToObject(cursor));
         cursor.close();
 
         return list;

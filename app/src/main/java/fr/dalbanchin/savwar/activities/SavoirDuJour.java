@@ -38,7 +38,13 @@ public class SavoirDuJour extends AppCompatActivity {
         String date_current = formatter.format(date);
 
         marvin = marvin.get(getBaseContext());
-        String dateMarvin = marvin.find(SavoirStorage.getsettingsSAVOIRID(getApplicationContext())).getDate();
+        String dateMarvin;
+
+        if (SavoirStorage.getsettingsSAVOIRID(getApplicationContext()) != -1) {
+            dateMarvin = marvin.find(SavoirStorage.getsettingsSAVOIRID(getApplicationContext())).getDate();
+        }else{
+            dateMarvin = "nexiste pas";
+        }
         if (SavoirStorage.getsettingsSAVOIRID(getApplicationContext()) == -1) {
 
 

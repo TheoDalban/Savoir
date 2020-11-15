@@ -51,9 +51,6 @@ public class RAdapterFavoris extends RecyclerView.Adapter<RAdapterFavoris.ViewHo
     List<String> msgList;
 
 
-
-
-
     public RAdapterFavoris(Context c) {
         marvin = marvin.get(c);
         msgList = marvin.findAllFavoring();

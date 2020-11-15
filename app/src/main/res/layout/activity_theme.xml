@@ -35,7 +35,8 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Thèmes"
-                android:textSize="24sp" />
+                android:textColor="#FFFFFF"
+                android:textSize="30sp" />
 
         </LinearLayout>
 

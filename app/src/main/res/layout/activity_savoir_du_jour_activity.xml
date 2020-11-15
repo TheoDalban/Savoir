@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".activities.SavoirDuJour"
     android:orientation="vertical"
-    android:background="@color/backgroundColor">
+    android:background="@color/backgroundColor2">
 
     <ImageView
         android:id="@+id/image_savoir"
@@ -30,7 +30,7 @@
         android:paddingRight="60dp"
         android:paddingBottom="20dp"
         android:text=""
-        android:textColor="@color/textColor"
+        android:textColor="@color/primaryTextColor"
         android:textSize="18sp" />
 
     <LinearLayout
@@ -52,19 +52,10 @@
             android:linksClickable="true"
             android:paddingLeft="30dp"
             android:text=""
-            android:textColor="@color/textColor"
+            android:textColor="@color/primaryTextColor"
             android:textSize="18sp" />
 
 
-        <com.github.ivbaranov.mfb.MaterialFavoriteButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            app:mfb_animate_favorite="true"
-            app:mfb_color="white"
-            app:mfb_type="heart"
-            app:mfb_size="48"
-            />
 
     </LinearLayout>
 

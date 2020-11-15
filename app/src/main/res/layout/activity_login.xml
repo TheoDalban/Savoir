@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/backgroundColor">
+    android:background="@color/backgroundColor2">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
             android:gravity="center"
             android:text="CONNEXION"
             android:textSize="30sp"
-            android:textColor="@color/textColor"/>
+            android:textColor="@color/primaryTextColor"/>
 
     </RelativeLayout>
 
@@ -37,8 +37,8 @@
             android:cursorVisible="true"
             android:hint="Identifiant"
             android:inputType="textEmailAddress"
-            android:textColor="@color/textColor"
-            android:textColorHint="@color/textColor"
+            android:textColor="@color/primaryTextColor"
+            android:textColorHint="@color/primaryTextColor"
             android:textSize="18sp"
             android:theme="@style/EditTextTheme" />
 
@@ -48,9 +48,9 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:hint="Mot de passe"
-            android:textColorHint="@color/textColor"
+            android:textColorHint="@color/primaryTextColor"
             android:theme="@style/EditTextTheme"
-            android:textColor="@color/textColor"/>
+            android:textColor="@color/primaryTextColor"/>
 
         <Button
             android:id="@+id/btn"

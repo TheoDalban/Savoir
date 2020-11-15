@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/backgroundColor">
+    android:background="@color/backgroundColor2">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -20,7 +20,7 @@
             android:gravity="center"
             android:text="Ajouter un savoir"
             android:textSize="30sp"
-            android:textColor="@color/textColor"/>
+            android:textColor="@color/primaryTextColor"/>
 
     </RelativeLayout>
 
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:inputType="text"
             android:hint="Thème"
-            android:textColorHint="@color/textColor"
+            android:textColorHint="@color/primaryTextColor"
             android:theme="@style/EditTextTheme"/>
 
 
@@ -51,7 +51,7 @@
             android:layout_marginTop="10dp"
             android:inputType="text"
             android:hint="Lien"
-            android:textColorHint="@color/textColor"
+            android:textColorHint="@color/primaryTextColor"
             android:theme="@style/EditTextTheme"/>
         <TextView
             android:layout_width="match_parent"
@@ -61,7 +61,7 @@
             android:layout_marginTop="60dp"
             android:text="Information complète"
             android:textSize="20sp"
-            android:textColor="@color/textColor"/>
+            android:textColor="@color/primaryTextColor"/>
 
         <EditText
             android:id="@+id/info"
@@ -70,7 +70,7 @@
             android:layout_marginTop="30dp"
             android:inputType="textLongMessage"
             android:hint="info"
-            android:textColorHint="@color/textColor"
+            android:textColorHint="@color/primaryTextColor"
             android:theme="@style/EditTextTheme"/>
 
 

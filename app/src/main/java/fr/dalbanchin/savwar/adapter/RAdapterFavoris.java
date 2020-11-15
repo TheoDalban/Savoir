@@ -2,8 +2,10 @@ package fr.dalbanchin.savwar.adapter;
 
 
 import fr.dalbanchin.savwar.R;
+import fr.dalbanchin.savwar.activities.FavorisActivity;
 import fr.dalbanchin.savwar.activities.SavoirDuJour;
 import fr.dalbanchin.savwar.model.Savoir;
+import fr.dalbanchin.savwar.storage.SavoirStorage;
 import fr.dalbanchin.savwar.storage.utility.BaseDeDonnee;
 import fr.dalbanchin.savwar.storage.SavoirDatabaseStorage;
 
@@ -52,8 +54,36 @@ public class RAdapterFavoris extends RecyclerView.Adapter<RAdapterFavoris.ViewHo
 
     public RAdapterFavoris(Context c) {
         marvin = marvin.get(c);
+        switch(SavoirStorage.getsettingsSAVOIRTHEME(c)){
+            case 0:
+                msgList = marvin.findAllFavoring();
+                break;
+            case 1 :
+                msgList = marvin.findAllAnimaux();
+                break;
+            case 2:
+                msgList = marvin.findAllCuisine();
+                break;
+            case 3:
+                msgList = marvin.findAllEspace();
+                break;
+            case 4:
+                msgList = marvin.findAllGeographie();
+                break;
+            case 5:
+                msgList = marvin.findAllHistoire();
+                break;
+            case 6:
+                msgList = marvin.findAllHumain();
+                break;
+            case 7:
+                msgList = marvin.findAllNature();
+                break;
 
-        msgList = marvin.findAllFavoring();
+            default:
+                System.out.println("DEFAULT");
+                break;
+        }
     }
 
     @Override

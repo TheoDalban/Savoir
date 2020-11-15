@@ -17,7 +17,7 @@ public final class SavoirStorage {
     public static final int PREF_ID_INT = -1;
     private static final int PREF_ID_DEFAULT = PREF_ID_INT;
 
-    private static final String PREF_THEME = "id";
+    private static final String PREF_THEME = "theme";
     public static final int PREF_THEME_INT = 0;
     private static final int PREF_THEME_DEFAULT = PREF_THEME_INT;
 

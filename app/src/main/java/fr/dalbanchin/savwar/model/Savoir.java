@@ -9,9 +9,11 @@ public class Savoir {
     private final String lien;
     private final int favoring;
     private final String date;
+    private final String title;
 
-    public Savoir(int id, String info, String theme, String lien, int favoring, String date) {
+    public Savoir(int id, String title,String info, String theme, String lien, int favoring, String date) {
         this.id = id;
+        this.title = title;
         this.info = info;
         this.theme = theme;
         this.lien = lien;
@@ -19,8 +21,8 @@ public class Savoir {
         this.date = date;
     }
 
-    public Savoir(String info, String theme, String lien, int favoring, String date) {
-        this(ID++, info, theme, lien, favoring, date);
+    public Savoir(String title,String info, String theme, String lien, int favoring, String date) {
+        this(ID++,title, info, theme, lien, favoring, date);
     }
 
 
@@ -32,6 +34,7 @@ public class Savoir {
         return info;
     }
 
+    public String getTitle() { return title; }
 
     public String getTheme() {
         return theme;

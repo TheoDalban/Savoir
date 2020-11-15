@@ -2,8 +2,13 @@ package fr.dalbanchin.savwar.adapter;
 
 
 import fr.dalbanchin.savwar.R;
+import fr.dalbanchin.savwar.activities.SavoirDuJour;
+import fr.dalbanchin.savwar.model.Savoir;
+import fr.dalbanchin.savwar.storage.utility.BaseDeDonnee;
+import fr.dalbanchin.savwar.storage.SavoirDatabaseStorage;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -15,9 +20,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class RAdapterFavoris extends RecyclerView.Adapter<RAdapterFavoris.ViewHolder> {
+    SavoirDatabaseStorage marvin,jesus;
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public LinearLayout row;
@@ -41,19 +48,27 @@ public class RAdapterFavoris extends RecyclerView.Adapter<RAdapterFavoris.ViewHo
         }
     }
 
-    ArrayList<String> msgList;
+    List<String> msgList;
+
+
+
 
 
     public RAdapterFavoris(Context c) {
-        msgList = new ArrayList<String>();
-        msgList.add("ça fonctionne bg");
-        msgList.add("Il faut changer l'image.");
+        marvin = marvin.get(c);
+        msgList = marvin.findAllFavoring();
     }
 
     @Override
     public void onBindViewHolder(RAdapterFavoris.ViewHolder viewHolder, int i) {
         TextView textView = viewHolder.textView;
         textView.setText(msgList.get(i));
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              //  Intent intentSavoir = new Intent(SavoirDuJour.class);
+            }
+        });
     }
 
     @Override

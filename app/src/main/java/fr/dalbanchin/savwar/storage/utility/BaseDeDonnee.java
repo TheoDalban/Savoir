@@ -32,6 +32,8 @@ abstract public class BaseDeDonnee<T> implements Storage<T>{
 
     protected abstract T cursorToObject(Cursor cursor);
 
+    protected abstract String cursorToString(Cursor cursor);
+
     @Override
     public void insert(T object) {
         helper.getWritableDatabase().insert(table, null, objectToContentValues(-1,object));
@@ -81,6 +83,104 @@ abstract public class BaseDeDonnee<T> implements Storage<T>{
 
         while (cursor.moveToNext())
             list.add(cursorToObject(cursor));
+        cursor.close();
+
+        return list;
+    }
+
+    @Override
+    public List<T> findAllAnimaux(){
+        List<T> list = new ArrayList<>();
+
+        Cursor cursor = helper.getReadableDatabase().query(table, null,   "theme" + " = ?", new String[]{"Animaux"}, null, null,null);
+
+        while (cursor.moveToNext())
+            list.add(cursorToObject(cursor));
+        cursor.close();
+
+        return list;
+    }
+
+    @Override
+    public List<T> findAllCuisine(){
+        List<T> list = new ArrayList<>();
+
+        Cursor cursor = helper.getReadableDatabase().query(table, null,   "theme" + " = ?", new String[]{"Cuisine"}, null, null,null);
+
+        while (cursor.moveToNext())
+            list.add(cursorToObject(cursor));
+        cursor.close();
+
+        return list;
+    }
+    @Override
+    public List<T> findAllEspace(){
+        List<T> list = new ArrayList<>();
+
+        Cursor cursor = helper.getReadableDatabase().query(table, null,   "theme" + " = ?", new String[]{"Espace"}, null, null,null);
+
+        while (cursor.moveToNext())
+            list.add(cursorToObject(cursor));
+        cursor.close();
+
+        return list;
+    }
+    @Override
+    public List<T> findAllGeographie(){
+        List<T> list = new ArrayList<>();
+
+        Cursor cursor = helper.getReadableDatabase().query(table, null,   "theme" + " = ?", new String[]{"Geographie"}, null, null,null);
+
+        while (cursor.moveToNext())
+            list.add(cursorToObject(cursor));
+        cursor.close();
+
+        return list;
+    }
+    @Override
+    public List<T> findAllHistoire(){
+        List<T> list = new ArrayList<>();
+
+        Cursor cursor = helper.getReadableDatabase().query(table, null,   "theme" + " = ?", new String[]{"Histoire"}, null, null,null);
+
+        while (cursor.moveToNext())
+            list.add(cursorToObject(cursor));
+        cursor.close();
+
+        return list;
+    }
+     @Override
+    public List<T> findAllHumain(){
+        List<T> list = new ArrayList<>();
+
+        Cursor cursor = helper.getReadableDatabase().query(table, null,   "theme" + " = ?", new String[]{"Humain"}, null, null,null);
+
+        while (cursor.moveToNext())
+            list.add(cursorToObject(cursor));
+        cursor.close();
+
+        return list;
+    }
+    @Override
+    public List<T> findAllNature(){
+        List<T> list = new ArrayList<>();
+
+        Cursor cursor = helper.getReadableDatabase().query(table, null,   "theme" + " = ?", new String[]{"Nature"}, null, null,null);
+
+        while (cursor.moveToNext())
+            list.add(cursorToObject(cursor));
+        cursor.close();
+
+        return list;
+    }
+    @Override
+    public List<String> findAllFavoring(){
+        List<String> list = new ArrayList<>();
+
+        Cursor cursor = helper.getReadableDatabase().query(table, new String[]{"titre"},   "favoring" + " = ?", new String[]{""+1}, null, null,null);
+
+        while (cursor.moveToNext())
+            list.add(cursorToString(cursor));
         cursor.close();
 
         return list;

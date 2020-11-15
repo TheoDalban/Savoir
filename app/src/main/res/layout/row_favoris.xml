@@ -10,12 +10,12 @@
     android:orientation="horizontal"
     android:background="@color/backgroundColor2">
 
-        <ImageView
-            android:id="@+id/image_savoir"
-            android:layout_width="118dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.45"
-            app:srcCompat="@drawable/savoir_du_jour_image" />
+    <ImageView
+        android:id="@+id/image_savoir"
+        android:layout_width="118dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.45"
+        app:srcCompat="@drawable/savwarlogo" />
 
         <TextView
             android:id="@+id/text_row_fav"
@@ -28,13 +28,13 @@
             android:textSize="20sp"
             tools:ignore="MissingConstraints" />
 
-        <ImageView
-            android:id="@+id/plusicon"
-            android:layout_width="81dp"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:layout_weight="0.45"
-            app:srcCompat="@drawable/plus_icon" />
+    <ImageView
+        android:id="@+id/plusicon"
+        android:layout_width="81dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="0.45"
+        app:srcCompat="@drawable/baseline_add_black_48" />
 
     </LinearLayout>
 

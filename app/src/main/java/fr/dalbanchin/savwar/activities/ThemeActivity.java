@@ -21,11 +21,18 @@ public class ThemeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_theme);
 
-
+        ImageView back = findViewById(R.id.home);
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.RView);
         RAdapterTheme radapter = new RAdapterTheme(this);
         recyclerView.setAdapter(radapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
     }
 }

@@ -7,9 +7,9 @@
     <application
         android:name=".activities.MyApp"
         android:allowBackup="true"
-        android:icon="@mipmap/iconsavwar"
+        android:icon="@mipmap/savwaricon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/iconsavwar_round"
+        android:roundIcon="@mipmap/savwaricon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 

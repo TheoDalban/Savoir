@@ -108,7 +108,7 @@ public final class SavoirStorage {
         savoir = new Savoir("La vitesse aérienne","Dans les airs l'oiseau : martinet noir ne se pose presque jamais sur terre sauf pour couver. Dans les airs, sa vitesse atteint facilement les 200 km/h.Si l’on ne prend en compte que les descentes en piqué, on peut dire que le faucon pèlerin surpasse tout le règne animal. Sa vitesse maximale enregistrée est de 389 km/h. Mais en moyenne, elle est de 180 km/h.", "Animaux", "https://lemagdesanimaux.ouest-france.fr/dossier-13-animaux-rapides-monde-terre-mer-air.html#:~:text=Sur%20terre%2C%20les%20animaux%20les,en%20%C3%A0%20peine%20trois%20secondes", 0, "vide");
         marvin.insert(savoir);
 
-        savoir = new Savoir("Le Bernard L'ermite","INFORMATION BRUT SUR LE BERNARD L'ERMITE : (clique sur 'En savoir plus')", "Animaux", "https://www.brut.media/fr/entertainment/comment-le-bernard-l-ermite-change-de-coquille-b4677265-3de0-4a6f-933d-ce935f78031b", 1, "vide");
+        savoir = new Savoir("Le Bernard L'ermite","INFORMATION BRUT SUR LE BERNARD L'ERMITE : (clique sur 'En savoir plus')", "Animaux", "https://www.brut.media/fr/entertainment/comment-le-bernard-l-ermite-change-de-coquille-b4677265-3de0-4a6f-933d-ce935f78031b", 0, "vide");
         marvin.insert(savoir);
 
         savoir = new Savoir("Le Lézard à Corne","INFORMATION BRUT SUR LE LEZARD A CORNE : (clique sur 'En savoir plus'')", "Animaux", "https://www.brut.media/fr/entertainment/comment-les-lezards-a-cornes-se-defendent-e20cac5f-bea7-48ea-82a3-1c5da31685c9", 0, "vide");
@@ -117,7 +117,7 @@ public final class SavoirStorage {
         savoir = new Savoir("Le biomimétisme","INFORMATION YOUTUBE SUR LE BIOMIMETISME : (clique sur 'En savoir plus')", "Animaux", "https://www.youtube.com/watch?v=Z3aC7ngSh3w", 0, "vide");
         marvin.insert(savoir);
 
-        savoir = new Savoir("Les noix de cocos meurtrières","Les noix de cocos tuent plus de personne que les requins : les noix de cocos sont lourdes et peuvent tomber sur des personnes se trouvant en dessous, il y a plus de personnes décedés de noix de cocos que de requins.", "Nature", "https://www.europe1.fr/international/Meduses-et-noix-de-coco-tuent-plus-que-les-requins-406210#:~:text=M%C3%AAme%20les%20noix%20de%20coco%20sont%20plus%20dangereuses&text=Ces%20attaques%20ne%20se%20r%C3%A9v%C3%A8lent,de%20coco%20sont%20plus%20dangereuses.", 1, "vide");
+        savoir = new Savoir("Les noix de cocos meurtrières","Les noix de cocos tuent plus de personne que les requins : les noix de cocos sont lourdes et peuvent tomber sur des personnes se trouvant en dessous, il y a plus de personnes décedés de noix de cocos que de requins.", "Nature", "https://www.europe1.fr/international/Meduses-et-noix-de-coco-tuent-plus-que-les-requins-406210#:~:text=M%C3%AAme%20les%20noix%20de%20coco%20sont%20plus%20dangereuses&text=Ces%20attaques%20ne%20se%20r%C3%A9v%C3%A8lent,de%20coco%20sont%20plus%20dangereuses.", 0, "vide");
         marvin.insert(savoir);
 
         savoir = new Savoir("La plus grande fleur","La Rafflesia la fleur simple la plus grande du monde végétal elle peut atteindre un mètre de diamètre et peser jusqu'à 10 kg", "Nature", "https://fr.wikipedia.org/wiki/Rafflesia", 0, "vide");

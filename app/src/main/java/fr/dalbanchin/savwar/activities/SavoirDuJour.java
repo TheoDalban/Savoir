@@ -33,11 +33,24 @@ public class SavoirDuJour extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_savoir_du_jour_activity);
+        ImageView back = findViewById(R.id.home);
+
 
         // on récupère la date actuelle
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
         Date date = new Date(System.currentTimeMillis());
         String date_current = formatter.format(date);
+
+
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+
 
         marvin = marvin.get(getBaseContext());
         String dateMarvin;

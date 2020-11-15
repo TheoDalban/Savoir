@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         if (SavoirStorage.getsettingsBDD(getApplicationContext()) == 0) {
 
             SavoirStorage.ajouterBdd(getBaseContext());
-            SavoirStorage.setsettingsBDD(getApplicationContext(),1);
+            SavoirStorage.setsettingsBDD(getApplicationContext(), 1);
         }
 
 
@@ -73,15 +73,13 @@ public class MainActivity extends AppCompatActivity {
         favoris.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SavoirStorage.setsettingsSAVOIRTHEME(getApplicationContext(), 0 );
+                SavoirStorage.setsettingsSAVOIRTHEME(getApplicationContext(), 0);
                 Intent favorisIntent = new Intent(getApplicationContext(), FavorisActivity.class);
                 startActivity(favorisIntent);
             }
         });
-        this.journuit = (Button) findViewById(R.id.button_ajouter);
-
-
     }
+
 
     @SuppressLint("NewApi")
     @Override

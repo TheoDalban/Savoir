@@ -8,15 +8,29 @@
     android:orientation="vertical"
     android:background="@color/backgroundColor2">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-    <ImageView
+        <ImageView
+            android:id="@+id/home"
+            android:layout_width="214dp"
+            android:layout_height="89dp"
+            android:layout_weight="0.1"
+
+            app:srcCompat="?attr/homeAsUpIndicator" />
+
+        <ImageView
         android:id="@+id/image_savoir"
         android:layout_width="match_parent"
         android:layout_height="220dp"
+            android:layout_marginRight="89dp"
+        android:layout_gravity="center"
         android:layout_weight="0.05"
 
         app:srcCompat="@drawable/savwarlogo" />
-
+    </LinearLayout>
     <TextView
         android:id="@+id/info_savoir"
         android:layout_width="match_parent"

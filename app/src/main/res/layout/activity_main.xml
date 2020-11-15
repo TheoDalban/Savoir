@@ -23,10 +23,22 @@
             android:layout_gravity="center"
             android:layout_weight="0.5"
             android:fontFamily="@font/archivo_narrow"
-            android:gravity="bottom|center_horizontal"
+            android:gravity="bottom|center|center_horizontal"
             android:text="sav.war"
             android:textColor="@color/primaryTextColor"
             android:textSize="50sp" />
+
+        <TextView
+            android:id="@+id/textsavoir"
+            android:layout_width="match_parent"
+            android:layout_height="13dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.5"
+            android:fontFamily="@font/archivo_narrow"
+            android:gravity="center|center_horizontal"
+            android:text="Le savoir est une arme."
+            android:textColor="@color/primaryTextColor"
+            android:textSize="20sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -83,12 +95,6 @@
             android:layout_gravity="center"
             android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/button_ajouter"
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:layout_gravity="left|center_vertical"
-                android:background="@drawable/button_background" />
 
             <ImageView
                 android:id="@+id/logo"
